@@ -10,5 +10,8 @@ VM specs:
 Default install options
 
 Pre-built VM:
-Username: infosec
-Password: infosec 
+- Username: infosec
+- Password: infosec 
+
+To get started, as root:
+- apt install git
