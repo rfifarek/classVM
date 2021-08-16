@@ -1,0 +1,6 @@
+#build.yml
+- name: Install packages
+  ansible.builtin.package:
+    name:
+      - 
+    state: present
