@@ -16,3 +16,5 @@ Pre-built VM:
 
 To get started, as root:
 - apt install git ansible
+- git clone https://github.com/rfifarek/classVM.git
+- 
