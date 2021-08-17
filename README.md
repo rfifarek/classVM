@@ -12,7 +12,7 @@ Default install options
 
 Pre-built VM:
 - Username: infosec
-- Password: infosec 
+- Password: infosec (you should change this, immediately)
 
 To get started, as root:
 - apt install git ansible
