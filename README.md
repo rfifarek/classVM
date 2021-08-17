@@ -14,4 +14,4 @@ Pre-built VM:
 - Password: infosec 
 
 To get started, as root:
-- apt install git
+- apt install git ansible
