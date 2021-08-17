@@ -1,5 +1,6 @@
 # classVM
 Ansible build for classVM
+
 VM specs:
 - XUbuntu 64-bit 20.04 LTS (20.04.2.0 as of today)
 - Legacy BIOS
