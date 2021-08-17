@@ -1,4 +1,9 @@
 #build.yml
+- hosts:
+    localhost:
+      vars:
+        ansible_connection: local
+        ansible_python_interpreter: "{{ansible_playbook_python}}"
 - name: Install packages
   ansible.builtin.package:
     name:
