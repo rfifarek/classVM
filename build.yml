@@ -12,7 +12,7 @@
         - nmap
         - tcpdump
         - curl
-        - wireskark
+        - wireshark
       state: present
       
   - name: Download the Wazuh unattended install script
