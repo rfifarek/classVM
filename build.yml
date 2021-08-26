@@ -23,3 +23,9 @@
       
   - name: Run the Wazuh unattended install script
     command: bash /tmp/unattended-installation.sh > /tmp/wazuh-unattended-installation-output.log
+    
+  - name: Install the Wazuh agent
+    ansible.builtin.package:
+      name: wazuh-agent
+    environment:
+      WAZUH_MANAGER: localhost
