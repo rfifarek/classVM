@@ -18,7 +18,7 @@
   - name: Download the Wazuh unattended install script
     get_url:
       url: https://packages.wazuh.com/resources/4.2/open-distro/unattended-installation/unattended-installation.sh
-      dest: unattended-installation.sh
+      dest: /tmp/unattended-installation.sh
       
   - name: Run the Wazuh unattended install script
-    command: bash unattended-installation.sh
+    command: bash /tmp/unattended-installation.sh
