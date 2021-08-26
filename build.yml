@@ -21,4 +21,4 @@
       dest: /tmp/unattended-installation.sh
       
   - name: Run the Wazuh unattended install script
-    command: bash /tmp/unattended-installation.sh
+    command: bash /tmp/unattended-installation.sh > /tmp/wazuh-unattended-installation-output.log
