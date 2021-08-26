@@ -14,7 +14,7 @@ Pre-built VM:
 - Username: infosec
 - Password: infosec (you should change this, immediately)
 
-To get started, as root:
-- apt install git ansible
+To build the VM, as root (via sudo):
+- sudo apt -y install git ansible
 - git clone https://github.com/rfifarek/classVM.git
-- 
+- sudo ansible-playbook build.yml
