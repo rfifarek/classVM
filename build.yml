@@ -5,6 +5,7 @@
     ansible_connection: local
     ansible_python_interpreter: "{{ansible_playbook_python}}"
   tasks:
+  
   - name: Install packages
     ansible.builtin.package:
       name:
@@ -13,3 +14,11 @@
         - curl
         - wireskark
       state: present
+      
+  - name: Download the Wazuh unattended install script
+    get_url:
+      url: https://packages.wazuh.com/resources/4.2/open-distro/unattended-installation/unattended-installation.sh
+      dest: unattended-installation.sh
+      
+  - name: Run the Wazuh unattended install script
+    command: bash unattended-installation.sh
