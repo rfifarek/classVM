@@ -7,5 +7,6 @@
 - name: Install packages
   ansible.builtin.package:
     name:
-      - 
+      - nmap
+      - tcpdump
     state: present
