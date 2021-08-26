@@ -10,6 +10,7 @@
     ansible.builtin.package:
       name:
         - nmap
+        - net-tools
         - tcpdump
         - curl
         - wireshark
