@@ -11,4 +11,5 @@
         - nmap
         - tcpdump
         - curl
+        - wireskark
       state: present
