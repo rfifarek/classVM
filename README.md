@@ -17,4 +17,5 @@ Pre-built VM:
 To build the VM, as root (via sudo):
 - sudo apt -y install git ansible
 - git clone https://github.com/rfifarek/classVM.git
+- cd classVM
 - sudo ansible-playbook build.yml
