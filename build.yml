@@ -1,12 +1,14 @@
 #build.yml
-- hosts:
-    localhost:
-      vars:
-        ansible_connection: local
-        ansible_python_interpreter: "{{ansible_playbook_python}}"
-- name: Install packages
-  ansible.builtin.package:
-    name:
-      - nmap
-      - tcpdump
-    state: present
+- name: Ansible playbook for building the class VM
+  hosts: localhost
+  vars:
+    ansible_connection: local
+    ansible_python_interpreter: "{{ansible_playbook_python}}"
+  tasks:
+  - name: Install packages
+    ansible.builtin.package:
+      name:
+        - nmap
+        - tcpdump
+        - curl
+      state: present
