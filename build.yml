@@ -22,7 +22,7 @@
       dest: /tmp/unattended-installation.sh
       
   - name: Run the Wazuh unattended install script
-    shell: /bin/bash /tmp/unattended-installation.sh > /tmp/wazuh-unattended-installation-output.log
+    shell: /bin/bash /tmp/unattended-installation.sh -o > /tmp/wazuh-unattended-installation-output.log
   
   - name: Install the Wazuh agent
     ansible.builtin.package:
