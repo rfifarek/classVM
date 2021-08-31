@@ -16,6 +16,10 @@
         - wireshark
         - libpam-google-authenticator
         - qrencode
+        - keepassxc
+        - ngrok
+        - zaproxy
+        - hping3
       state: present
       
   - name: Download the Wazuh unattended install script
