@@ -18,7 +18,7 @@
         - qrencode
         - keepassxc
 #        - ngrok
-        - zaproxy
+#        - zaproxy
         - hping3
       state: present
       
