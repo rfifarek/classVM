@@ -6,7 +6,7 @@
     ansible_python_interpreter: "{{ansible_playbook_python}}"
   tasks:
   
-  - name: Install packages
+  - name: Install packages (apt)
     ansible.builtin.package:
       name:
         - nmap
@@ -18,7 +18,12 @@
         - qrencode
         - keepassxc
         - hping3
+        - vim
       state: present
+  - name: Install packages (snap)
+    community.general.snap:
+      name:
+        - zaproxy
       
   - name: Download the Wazuh unattended install script
     get_url:
