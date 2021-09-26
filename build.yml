@@ -17,8 +17,6 @@
         - libpam-google-authenticator
         - qrencode
         - keepassxc
-#        - ngrok
-#        - zaproxy
         - hping3
       state: present
       
