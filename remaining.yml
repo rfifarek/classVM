@@ -1,6 +1,10 @@
-tasks:
-  - name: Install packages (snap w/classic)
-    community.general.snap:
-      name:
-        - zaproxy
-      classic: yes
+- hosts: localhost
+  vars:
+    ansible_connection: local
+    ansible_python_interpreter: "{{ansible_playbook_python}}"
+  tasks:
+    - name: Install packages (snap w/classic)
+      community.general.snap:
+        name:
+          - zaproxy
+        classic: yes
