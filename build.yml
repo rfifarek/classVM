@@ -20,10 +20,6 @@
         - hping3
         - vim
       state: present
-  - name: Install packages (snap)
-    community.general.snap:
-      name:
-        - zaproxy
       
   - name: Download the Wazuh unattended install script
     get_url:
@@ -33,3 +29,9 @@
   - name: Run the Wazuh unattended install script (reinstall)
     shell: /bin/bash /tmp/unattended-installation.sh -o > /tmp/wazuh-unattended-installation-output.log
   
+  - name: Install pre-reqs before running remaining.yml
+    command: "ansible-galaxy collection install community.general"
+  
+  # this should be the last step, kludgey but works
+  - name: Run remaining.yml
+    command: "ansible-playbook remaining.yml"
