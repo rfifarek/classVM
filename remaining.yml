@@ -1,0 +1,6 @@
+tasks:
+  - name: Install packages (snap w/classic)
+    community.general.snap:
+      name:
+        - zaproxy
+      classic: yes
