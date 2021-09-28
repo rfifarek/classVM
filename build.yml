@@ -21,13 +21,20 @@
         - vim
       state: present
       
+  - name: Test if Wazuh appears to be already installed
+    stat:
+      path: /var/ossec/bin/wazuh-monitord
+    register: wazuh
+      
   - name: Download the Wazuh unattended install script
     get_url:
       url: https://packages.wazuh.com/resources/4.2/open-distro/unattended-installation/unattended-installation.sh
       dest: /tmp/unattended-installation.sh
-      
+    when: not wazuh.stat.exists 
+    
   - name: Run the Wazuh unattended install script (reinstall)
     shell: /bin/bash /tmp/unattended-installation.sh -o > /tmp/wazuh-unattended-installation-output.log
+    when: not wazuh.stat.exists
   
   - name: Install pre-reqs before running remaining.yml
     command: "ansible-galaxy collection install community.general"
