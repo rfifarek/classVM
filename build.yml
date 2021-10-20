@@ -41,12 +41,19 @@
         - powershell
         - apt-transport-https
         - software-properties-common
+        - openssh-server
       state: present
       
   - name: Make script executable
     file:
       path: start-nmap-exercise.sh
       mode: '0744'
+  
+  - name: Enable and start SSHD
+    ansible.builtin.systemd:
+      state: started
+      enabled: yes
+      name: openssh-server
       
   - name: Test if Wazuh appears to be already installed
     stat:
