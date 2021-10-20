@@ -22,6 +22,11 @@
         - hping3
         - vim
       state: present
+  
+  - name: Make script executable
+    file:
+      path: start-nmap-exercise.sh
+      mode: '0744'
       
   - name: Test if Wazuh appears to be already installed
     stat:
