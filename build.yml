@@ -53,7 +53,7 @@
     ansible.builtin.systemd:
       state: started
       enabled: yes
-      name: openssh-server
+      name: sshd
       
   - name: Test if Wazuh appears to be already installed
     stat:
