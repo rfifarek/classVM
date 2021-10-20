@@ -1,11 +1,27 @@
 #build.yml
 - name: Ansible playbook for building the class VM
+  
   hosts: localhost
+  
   vars:
     ansible_connection: local
     ansible_python_interpreter: "{{ansible_playbook_python}}"
+  
   tasks:
   
+  - name: Add Powershell APT repo
+    apt:
+      deb: https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
+      
+  - name: Update all packages to their latest version
+    apt:
+      name: "*"
+      state: latest
+
+  - name: Upgrade the OS (apt-get dist-upgrade)
+    apt:
+      upgrade: dist
+    
   - name: Install packages (apt)
     ansible.builtin.package:
       name:
@@ -21,8 +37,12 @@
         - keepassxc
         - hping3
         - vim
+        - wget
+        - powershell
+        - apt-transport-https
+        - software-properties-common
       state: present
-  
+      
   - name: Make script executable
     file:
       path: start-nmap-exercise.sh
