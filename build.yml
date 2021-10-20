@@ -20,7 +20,7 @@
 
   - name: Upgrade the OS (apt-get dist-upgrade)
     apt:
-      upgrade: dist
+      update_cache: yes
     
   - name: Install packages (apt)
     ansible.builtin.package:
