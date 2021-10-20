@@ -18,7 +18,7 @@
       name: "*"
       state: latest
 
-  - name: Upgrade the OS (apt-get dist-upgrade)
+  - name: "apt-get update"
     apt:
       update_cache: yes
     
