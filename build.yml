@@ -58,7 +58,7 @@
     loop:
       - start-nmap-exercise.sh
       - stop-nmap-exercise.sh
-      - 
+      - pentest-exercise.sh
   
   - name: Enable and start SSHD
     ansible.builtin.systemd:
