@@ -4,7 +4,13 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-for port in 22 23 53 80 443 8080 3306 5432 7802 12345 
+if [ -f /usr/local/apache2/bin/apachectl ]
+   then /usr/local/apache2/bin/apachectl start 2>/dev/null &
+else
+   ncat -kl 80 2>/dev/null &
+fi
+
+for port in 22 23 53 443 8080 3306 5432 7802 12345 
 do
 	ncat -kl $port 2>/dev/null &
 done
