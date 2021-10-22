@@ -36,6 +36,8 @@
         - qrencode
         - keepassxc
         - hping3
+        - hydra
+        - hydra-gtk
         - vim
         - wget
         - powershell
