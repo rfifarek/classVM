@@ -58,6 +58,8 @@
     loop:
       - start-nmap-exercise.sh
       - stop-nmap-exercise.sh
+      - start-apache.sh
+      - stop-apache.sh
       - pentest-exercise.sh
   
   - name: Enable and start SSHD
