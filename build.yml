@@ -64,18 +64,18 @@
       url: https://archive.apache.org/dist/httpd/httpd-2.4.49.tar.bz2
       dest: /tmp/httpd-2.4.49.tar.bz2
       
-  - name: Unarchive a file that is already on the remote machine
+  - name: Unarchive Apache tarball
     ansible.builtin.unarchive:
       src: /tmp/httpd-2.4.49.tar.bz2
       dest: /tmp
       remote_src: yes
   
-  - name: Configuring Apache source with custom modules
+  - name: Configuring Apache source
     command: "./configure"
     args:
       chdir: /tmp/httpd-2.4.49
   
-  - name: Building and Installing Apache
+  - name: Building and Install Apache
     shell: make && make install
     args:
       chdir: /tmp/httpd-2.4.49
