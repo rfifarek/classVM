@@ -48,12 +48,17 @@
         - gcc
         - make
         - libpcre3-dev
+        - john
       state: present
       
   - name: Make script executable
     file:
-      path: start-nmap-exercise.sh
+      path: "{{ item }}"
       mode: '0744'
+    loop:
+      - start-nmap-exercise.sh
+      - stop-nmap-exercise.sh
+      - 
   
   - name: Enable and start SSHD
     ansible.builtin.systemd:
