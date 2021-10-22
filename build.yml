@@ -44,6 +44,7 @@
         - openssh-server
         - libaprutil1-dev
         - gcc
+        - make
         - libpcre3-dev
       state: present
       
