@@ -25,6 +25,7 @@
   - name: Install packages (apt)
     ansible.builtin.package:
       name:
+        - gedit
         - nmap
         - ncat
         - net-tools
