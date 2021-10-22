@@ -5,7 +5,7 @@ if [ "$EUID" -ne 0 ]
 fi
 
 if [ -f /usr/local/apache2/bin/apachectl ]
-   then /usr/local/apache2/bin/apachectl start 2>/dev/null &
+   then /usr/local/apache2/bin/apachectl -f `pwd`/httpd.conf -k start 2>/dev/null &
 else
    ncat -kl 80 2>/dev/null &
 fi
