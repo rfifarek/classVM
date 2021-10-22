@@ -42,6 +42,9 @@
         - apt-transport-https
         - software-properties-common
         - openssh-server
+        - libaprutil1-dev
+        - gcc
+        - libpcre3-dev
       state: present
       
   - name: Make script executable
@@ -59,6 +62,22 @@
     get_url:
       url: https://archive.apache.org/dist/httpd/httpd-2.4.49.tar.bz2
       dest: /tmp/httpd-2.4.49.tar.bz2
+      
+  - name: Unarchive a file that is already on the remote machine
+    ansible.builtin.unarchive:
+      src: /tmp/httpd-2.4.49.tar.bz2
+      dest: /tmp
+      remote_src: yes
+  
+  - name: Configuring Apache source with custom modules
+    command: "./configure"
+    args:
+      chdir: /tmp/httpd-2.4.49
+  
+  - name: Building and Installing Apache
+    shell: make && make install
+    args:
+      chdir: /tmp/httpd-2.4.49
       
   - name: Test if Wazuh appears to be already installed
     stat:
