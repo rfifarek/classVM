@@ -8,3 +8,7 @@
         name:
           - zaproxy
         classic: yes
+    - name: Install packages (snap w/classic)
+      community.general.snap:
+        name:
+          - keepassxc
