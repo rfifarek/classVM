@@ -12,6 +12,11 @@
   - name: Add Powershell APT repo
     apt:
       deb: https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
+  
+  - name: Add KeePassXC repo
+    ansible.builtin.apt_repository:
+      repo: ppa:phoerious/keepassxc
+      state: present
       
   - name: Update all packages to their latest version
     apt:
