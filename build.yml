@@ -35,7 +35,6 @@
         - tshark
         - libpam-google-authenticator
         - qrencode
-        - keepassxc
         - hping3
         - hydra
         - hydra-gtk
