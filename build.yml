@@ -33,6 +33,7 @@
         - curl
         - wireshark
         - tshark
+        - keepassxc
         - libpam-google-authenticator
         - qrencode
         - hping3
