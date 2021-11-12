@@ -72,7 +72,7 @@
   - name: Update permissions for exercise
     file:
       path: /etc/shadow
-      mode: '0444'
+      mode: '0644'
   
   - name: Enable and start SSHD
     ansible.builtin.systemd:
