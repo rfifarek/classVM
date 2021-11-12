@@ -67,6 +67,11 @@
       - start-apache.sh
       - stop-apache.sh
       - pentest-exercise.sh
+      
+  - name: Update permissions for exercise
+    file:
+      path: /etc/shadow
+      mode: '0444'
   
   - name: Enable and start SSHD
     ansible.builtin.systemd:
