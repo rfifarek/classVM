@@ -9,7 +9,7 @@ Credentials on the pre-built VM:
 
 ============
 
-To build the VM yourself, recommend the following specs:
+To build the VM yourself, we recommend the following minimum specs:
 - XUbuntu 64-bit 20.04 LTS (20.04.3 as of today), get the ISO from https://xubuntu.org/download
 - Legacy BIOS
 - 2 vCPUs
