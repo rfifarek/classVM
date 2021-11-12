@@ -67,6 +67,7 @@
       - start-apache.sh
       - stop-apache.sh
       - pentest-exercise.sh
+      - testpermissions.sh
       
   - name: Update permissions for exercise
     file:
