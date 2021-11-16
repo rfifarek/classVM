@@ -46,6 +46,7 @@
         - hydra-gtk
         - vim
         - wget
+        - tilix
         - powershell
         - apt-transport-https
         - software-properties-common
@@ -79,27 +80,36 @@
       state: started
       enabled: yes
       name: sshd
+      
+  - name: Register a variable
+    ansible.builtin.stat:
+      path: /usr/local/apache2/bin/httpd
+    register: httpdBin
   
   - name: download Apache 2.4.49
     get_url:
       url: https://archive.apache.org/dist/httpd/httpd-2.4.49.tar.bz2
       dest: /tmp/httpd-2.4.49.tar.bz2
+    when: not httpdBin.stat.exists
       
   - name: Unarchive Apache tarball
     ansible.builtin.unarchive:
       src: /tmp/httpd-2.4.49.tar.bz2
       dest: /tmp
       remote_src: yes
+    when: not httpdBin.stat.exists
   
   - name: Configuring Apache source
     command: "./configure"
     args:
       chdir: /tmp/httpd-2.4.49
+    when: not httpdBin.stat.exists
   
   - name: Building and Install Apache
     shell: make && make install
     args:
       chdir: /tmp/httpd-2.4.49
+    when: not httpdBin.stat.exists
       
   - name: Test if Wazuh appears to be already installed
     stat:
