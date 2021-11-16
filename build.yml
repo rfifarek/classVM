@@ -81,7 +81,7 @@
       enabled: yes
       name: sshd
       
-  - name: Register a variable
+  - name: Test if vulnerable Apache already installed
     ansible.builtin.stat:
       path: /usr/local/apache2/bin/httpd
     register: httpdBin
@@ -105,7 +105,7 @@
       chdir: /tmp/httpd-2.4.49
     when: not httpdBin.stat.exists
   
-  - name: Building and Install Apache
+  - name: Build and Install vulnerable Apache
     shell: make && make install
     args:
       chdir: /tmp/httpd-2.4.49
@@ -126,12 +126,12 @@
     shell: /bin/bash /tmp/unattended-installation.sh -o > /tmp/wazuh-unattended-installation-output.log
     when: not wazuh.stat.exists
   
-  - name: Register a variable based on the existance of a ansible-galaxy collection module
+  - name: Test if ansible-galaxy collection module installed
     ansible.builtin.stat:
       path: /root/.ansible/collections/ansible_collections/community/general/plugins/modules/snap.py
     register: snap
   
-  - name: Install pre-reqs before running remaining.yml
+  - name: Install pre-req ansible-galaxy collection before running remaining.yml
     command: "ansible-galaxy collection install community.general"
     when: not snap.stat.exists
   
