@@ -126,8 +126,14 @@
     shell: /bin/bash /tmp/unattended-installation.sh -o > /tmp/wazuh-unattended-installation-output.log
     when: not wazuh.stat.exists
   
+  - name: Register a variable based on the existance of a ansible-galaxy collection module
+    ansible.builtin.stat:
+      path: /root/.ansible/collections/ansible_collections/community/general/plugins/modules/snap.py
+    register: snap
+  
   - name: Install pre-reqs before running remaining.yml
     command: "ansible-galaxy collection install community.general"
+    when: not snap.stat.exists
   
   # this should be the last step, kludgey but works
   - name: Run remaining.yml
