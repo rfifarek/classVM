@@ -2,11 +2,13 @@
 Ansible build for classVM
 
 A pre-built VM is available here:
-https://drive.google.com/file/d/1sP_BqID97J8_GNsygkqLDGKOVF5NU3TQ
+https://drive.google.com/file/d/1sP_BqID97J8_GNsygkqLDGKOVF5NU3TQ&export=download
 
 Credentials on the pre-built VM:
 - Username: infosec
 - Password: infosec (you should change this, immediately)
+
+Note: if while importing the VM, you get an error that it "... did not pass OVF specification conformance ...", click on Retry and it should import and run fine.
 
 ============
 
