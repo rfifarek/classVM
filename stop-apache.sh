@@ -6,3 +6,4 @@ fi
 
 if [ -f /usr/local/apache2/bin/apachectl ]
    then /usr/local/apache2/bin/apachectl stop
+fi
