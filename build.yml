@@ -114,7 +114,7 @@
   - name: Add NSE
     get_url:
       url: https://raw.githubusercontent.com/RootUp/PersonalStuff/master/http-vuln-cve-2021-41773.nse
-      dest: /usr/share/nmap/scripts/http-vuln-cve-2021-41773.nse
+      dest: /usr/share/nmap/scripts/http-vuln-cve2021-41773.nse
       
   - name: Test if Wazuh appears to be already installed
     stat:
