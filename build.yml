@@ -65,8 +65,8 @@
     loop:
       - start-nmap-exercise.sh
       - stop-nmap-exercise.sh
-      - start-apache.sh
-      - stop-apache.sh
+      - start-pentest.sh
+      - stop-pentest.sh
       - pentest-exercise.sh
       - testpermissions.sh
       
