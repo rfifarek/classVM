@@ -14,4 +14,3 @@
       community.general.snap:
         name:
           - discord
-        classic: yes
