@@ -61,7 +61,7 @@
   - name: Make script executable
     file:
       path: "{{ item }}"
-      mode: '0755'
+      mode: '0775'
     loop:
       - start-nmap-exercise.sh
       - stop-nmap-exercise.sh
