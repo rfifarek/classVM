@@ -57,7 +57,11 @@
         - libpcre3-dev
         - john
       state: present
-      
+  
+  - name: Install Discord via URL (the snap lags the download page) 
+    apt:
+      deb: https://discord.com/api/download?platform=linux&format=deb
+  
   - name: Make script executable
     file:
       path: "{{ item }}"
