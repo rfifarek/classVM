@@ -67,7 +67,6 @@
       - stop-nmap-exercise.sh
       - start-pentest.sh
       - stop-pentest.sh
-      - pentest-exercise.sh
       - testpermissions.sh
       
   - name: Update permissions for exercise
