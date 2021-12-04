@@ -73,12 +73,21 @@
     file:
       path: /etc/shadow
       mode: '0644'
-  
+# ---- Services ----  
   - name: Enable and start SSHD
     ansible.builtin.systemd:
       state: started
       enabled: yes
       name: sshd
+      
+  - name: Stop and disable uneccessary services
+    ansible.builtin.systemd:
+      state: stopped
+      enabled: no
+      name: "{{ item }}"
+    loop:
+      - cups
+#---- Services (end) ----
       
   - name: Test if vulnerable Apache already installed
     ansible.builtin.stat:
