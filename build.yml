@@ -89,12 +89,12 @@
       - cups
 #---- Services (end) ----
       
-  - name: Test if vulnerable Apache already installed
+  - name: Test if custom Apache already installed
     ansible.builtin.stat:
       path: /usr/local/apache2/bin/httpd
     register: httpdBin
   
-  - name: download Apache 2.4.49
+  - name: download custom Apache 2.4.49
     get_url:
       url: https://archive.apache.org/dist/httpd/httpd-2.4.49.tar.bz2
       dest: /tmp/httpd-2.4.49.tar.bz2
@@ -113,7 +113,7 @@
       chdir: /tmp/httpd-2.4.49
     when: not httpdBin.stat.exists
   
-  - name: Build and Install vulnerable Apache
+  - name: Build and Install custom Apache
     shell: make && make install
     args:
       chdir: /tmp/httpd-2.4.49
