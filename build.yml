@@ -8,7 +8,7 @@
     ansible_python_interpreter: "{{ansible_playbook_python}}"
   
   tasks:
-  
+#--- add repos ---  
   - name: Add Powershell APT repo
     apt:
       deb: https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
@@ -17,7 +17,8 @@
     ansible.builtin.apt_repository:
       repo: ppa:phoerious/keepassxc
       state: present
-      
+#--- add repos (end) ---
+#--- package operations ---
   - name: Update all packages to their latest version
     apt:
       name: "*"
@@ -57,7 +58,8 @@
         - libpcre3-dev
         - john
       state: present
-  
+#--- package operations (end) ---
+#--- permissions ---
   - name: Make script executable
     file:
       path: "{{ item }}"
@@ -73,7 +75,8 @@
     file:
       path: /etc/shadow
       mode: '0644'
-# ---- Services ----  
+#--- permissions (end) ---
+#--- services ---  
   - name: Enable and start SSHD
     ansible.builtin.systemd:
       state: started
@@ -87,8 +90,8 @@
       name: "{{ item }}"
     loop:
       - cups
-#---- Services (end) ----
-      
+#--- services (end) ---
+#---       
   - name: Test if custom Apache already installed
     ansible.builtin.stat:
       path: /usr/local/apache2/bin/httpd
