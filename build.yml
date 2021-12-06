@@ -124,11 +124,11 @@
 #--- custom apache (end) ---
 #--- NSE for custom apache ---
   - name: Add NSE
-    ansible.builtin.copy:
-      src: http-vuln-cve2021-41773.nse
+    get_url:
+      url: http://example.com/path/file.conf
       dest: /usr/share/nmap/scripts/http-vuln-cve2021-41773.nse
-      owner: foo
-      group: foo
+      owner: root
+      group: root
       mode: '0644'
 #--- NSE for custom apache (end) ---
 #--- Wazuh install ---
