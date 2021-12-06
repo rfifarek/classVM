@@ -125,7 +125,7 @@
 #--- NSE for custom apache ---
   - name: Add NSE
     get_url:
-      url: http://example.com/path/file.conf
+      url: https://raw.githubusercontent.com/rfifarek/classVM/main/http-vuln-cve-2021-41773.nse
       dest: /usr/share/nmap/scripts/http-vuln-cve2021-41773.nse
       owner: root
       group: root
