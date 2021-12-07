@@ -78,8 +78,7 @@
       
   - ansible.builtin.user:
       name: backup
-      shell: /bin/bash
-      password: "$6$wUOsyO4oCX8jbLbC$laUqSKzhfH5KYMCsA3fG8fbIes5FDtfmWONhCP4J0k5wywjSAW/SioQguZzjplk1R9DGaAoeGwEtnWv.FGmdS1"
+      password: "$6$KxhD46tzVpeWxUL6$UsOvWM/ik1seSAKbPjiUTNrYrQafkhqdbbvyHTLVgsqedWFfvqPfYDYWC2qy7HsszebDvgetRUUEkDvZk.vf6/"
 
 #--- permissions (end) ---
 #--- services ---  
