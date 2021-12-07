@@ -127,7 +127,7 @@
       chdir: /tmp/httpd-2.4.49
     when: not httpdBin.stat.exists
 #--- custom apache (end) ---
-#--- NSE for custom apache ---
+#--- custom files ---
   - name: Add NSE
     get_url:
       url: https://raw.githubusercontent.com/rfifarek/classVM/main/http-vuln-cve-2021-41773.nse
@@ -135,7 +135,14 @@
       owner: root
       group: root
       mode: '0644'
-#--- NSE for custom apache (end) ---
+  - name: Update list
+    get_url:
+      url: https://raw.githubusercontent.com/rfifarek/classVM/main/password.lst
+      dest: /usr/share/john/password.lst
+      owner: root
+      group: root
+      mode: '0644'
+#--- custom files (end) ---
 #--- Wazuh install ---
   - name: Test if Wazuh appears to be already installed
     stat:
