@@ -6,4 +6,5 @@ fi
 
 killall ncat
 /usr/local/apache2/bin/apachectl stop
-/usr/sbin/ufw disable
+/usr/sbin/ufw disable > /dev/null
+/usr/sbin/iptables -F
