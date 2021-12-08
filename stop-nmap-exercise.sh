@@ -6,3 +6,4 @@ fi
 
 killall ncat
 /usr/local/apache2/bin/apachectl stop
+/usr/sbin/ufw disable
