@@ -17,7 +17,7 @@ To build the VM yourself, we recommend the following minimum specs:
 - Legacy BIOS
 - 2 vCPUs
 - 8 GB of RAM
-- 20 GB of disk (thin provisioned, actual use ~11 GB)
+- 20 GB of disk (thin provisioned, actual use ~14 GB)
 - DHCP / Share with my machine for network
 
 When installing, the default install options are fine, "Easy Install" included.
