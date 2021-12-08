@@ -57,6 +57,7 @@
         - make
         - libpcre3-dev
         - john
+        - xml2
       state: present
 #--- package operations (end) ---
 #--- permissions ---
