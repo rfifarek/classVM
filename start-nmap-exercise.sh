@@ -5,9 +5,9 @@ then
   exit
 fi
 
-if [ -f start-apache.sh ]
-then 
-  start-apache.sh
+if [ -f /usr/local/apache2/bin/apachectl ]
+then
+  /usr/local/apache2/bin/apachectl -k start 2>/dev/null &
   /usr/sbin/ufw enable
   /usr/sbin/ufw deny to 127.0.0.1 port 25
 else
