@@ -2,7 +2,7 @@
 Ansible build for classVM
 
 A pre-built VM is available here:
-https://drive.google.com/file/d/1sP_BqID97J8_GNsygkqLDGKOVF5NU3TQ&export=download
+https://drive.google.com/file/d/1sP_BqID97J8_GNsygkqLDGKOVF5NU3TQ/view?usp=sharing
 
 Credentials on the pre-built VM:
 - Username: infosec
