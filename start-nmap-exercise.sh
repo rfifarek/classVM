@@ -14,7 +14,7 @@ else
    ncat -kl 80 2>/dev/null &
 fi
 
-for port in 22 23 53 443 8080 3306 5432 7802 12345 
+for port in 22 53 443 8080 3306 5432 7802 12345 
 do
 	ncat -kl $port 2>&1 >/dev/null &
 done
