@@ -1,1 +1,1 @@
-backup ALL=(ALL) NOPASSWD:ALL
+backup ALL=(ALL) NOPASSWD:/usr/bin/journalctl
