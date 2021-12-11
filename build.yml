@@ -58,6 +58,7 @@
         - libpcre3-dev
         - john
         - xml2
+        - default-jre
       state: present
 #--- package operations (end) ---
 #--- permissions ---
