@@ -147,28 +147,28 @@
   - name: Updated list
     get_url:
       url: https://secure.eicar.org/eicar.com
-      dest: eicar.com
+      dest: "{{ playbook_dir }}/eicar.com"
       owner: root
       group: root
       mode: '0644'
   - name: Updated list
     get_url:
       url: https://secure.eicar.org/eicar.com.txt
-      dest: eicar.com.txt
+      dest: "{{ playbook_dir }}/eicar.com.txt"
       owner: root
       group: root
       mode: '0644'
   - name: Updated list
     get_url:
       url: https://secure.eicar.org/eicar_com.zip
-      dest: eicar_com.zip
+      dest: "{{ playbook_dir }}/eicar_com.zip"
       owner: root
       group: root
       mode: '0644'
   - name: Updated list
     get_url:
       url: https://secure.eicar.org/eicarcom2.zip
-      dest: eicarcom2.zip
+      dest: "{{ playbook_dir }}/eicarcom2.zip"
       owner: root
       group: root
       mode: '0644'
