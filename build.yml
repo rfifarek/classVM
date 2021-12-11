@@ -137,10 +137,38 @@
       owner: root
       group: root
       mode: '0644'
-  - name: Update list
+  - name: Updated list
     get_url:
       url: https://raw.githubusercontent.com/rfifarek/classVM/main/password.lst
       dest: /usr/share/john/password.lst
+      owner: root
+      group: root
+      mode: '0644'
+  - name: Updated list
+    get_url:
+      url: https://secure.eicar.org/eicar.com
+      dest: eicar.com
+      owner: root
+      group: root
+      mode: '0644'
+  - name: Updated list
+    get_url:
+      url: https://secure.eicar.org/eicar.com.txt
+      dest: eicar.com.txt
+      owner: root
+      group: root
+      mode: '0644'
+  - name: Updated list
+    get_url:
+      url: https://secure.eicar.org/eicar_com.zip
+      dest: eicar_com.zip
+      owner: root
+      group: root
+      mode: '0644'
+  - name: Updated list
+    get_url:
+      url: https://secure.eicar.org/eicarcom2.zip
+      dest: eicarcom2.zip
       owner: root
       group: root
       mode: '0644'
