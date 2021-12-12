@@ -1,6 +1,6 @@
-# Nmap 7.92 scan initiated Wed Dec  8 20:01:46 2021 as: nmap -n -oA inventory-scan -A 172.21.172.0/24
+# Nmap 7.92 scan initiated Sat Dec 11 14:31:18 2021 as: nmap -n -oA inventory-scan -A 172.21.172.0/22
 Nmap scan report for 172.21.172.1
-Host is up (0.00039s latency).
+Host is up (0.00031s latency).
 Not shown: 996 filtered tcp ports (no-response)
 PORT    STATE SERVICE  VERSION
 22/tcp  open  ssh      OpenSSH 7.9 (protocol 2.0)
@@ -13,31 +13,29 @@ PORT    STATE SERVICE  VERSION
 | tls-nextprotoneg: 
 |   h2
 |_  http/1.1
-| tls-alpn: 
-|   h2
-|_  http/1.1
+|_http-title: pfSense - Login
 | ssl-cert: Subject: commonName=pfsense.locosec.com/organizationName=LoCoSec/stateOrProvinceName=Washington/countryName=US
 | Subject Alternative Name: DNS:pfsense.locosec.com
 | Not valid before: 2020-03-31T20:52:24
 |_Not valid after:  2030-03-29T20:52:24
-|_ssl-date: TLS randomness does not represent time
-|_http-title: pfSense - Login
+| tls-alpn: 
+|   h2
+|_  http/1.1
 MAC Address: 00:E0:67:22:38:39 (eac Automation-consulting Gmbh)
 Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
 Device type: general purpose
-Running (JUST GUESSING): FreeBSD 11.X (98%)
+Running: FreeBSD 11.X
 OS CPE: cpe:/o:freebsd:freebsd:11.2
-Aggressive OS guesses: FreeBSD 11.2-RELEASE (98%)
-No exact OS matches for host (test conditions non-ideal).
+OS details: FreeBSD 11.2-RELEASE
 Network Distance: 1 hop
 
 TRACEROUTE
 HOP RTT     ADDRESS
-1   0.39 ms 172.21.172.1
+1   0.31 ms 172.21.172.1
 
 Nmap scan report for 172.21.172.3
-Host is up (0.00060s latency).
-Not shown: 979 filtered tcp ports (no-response), 18 filtered tcp ports (host-prohibited)
+Host is up (0.00057s latency).
+Not shown: 980 filtered tcp ports (no-response), 17 filtered tcp ports (host-prohibited)
 PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 7.4 (protocol 2.0)
 | ssh-hostkey: 
@@ -48,8 +46,8 @@ PORT   STATE SERVICE VERSION
 | dns-nsid: 
 |_  bind.version: dnsmasq-pi-hole-2.87test3
 80/tcp open  http    lighttpd 1.4.54
-|_http-server-header: lighttpd/1.4.54
 |_http-title: \xE2\x97\x8F 172.21.172.3
+|_http-server-header: lighttpd/1.4.54
 MAC Address: 46:8F:40:74:0F:91 (Unknown)
 Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
 Device type: general purpose
@@ -60,7 +58,7 @@ Network Distance: 1 hop
 
 TRACEROUTE
 HOP RTT     ADDRESS
-1   0.60 ms 172.21.172.3
+1   0.57 ms 172.21.172.3
 
 Nmap scan report for 172.21.172.11
 Host is up (0.00027s latency).
@@ -94,7 +92,7 @@ HOP RTT     ADDRESS
 1   0.27 ms 172.21.172.11
 
 Nmap scan report for 172.21.172.12
-Host is up (0.00026s latency).
+Host is up (0.00025s latency).
 Not shown: 997 closed tcp ports (reset)
 PORT     STATE SERVICE VERSION
 22/tcp   open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
@@ -122,15 +120,15 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 TRACEROUTE
 HOP RTT     ADDRESS
-1   0.26 ms 172.21.172.12
+1   0.25 ms 172.21.172.12
 
 Nmap scan report for 172.21.172.20
-Host is up (0.0052s latency).
+Host is up (0.0079s latency).
 Not shown: 999 closed tcp ports (reset)
 PORT   STATE SERVICE VERSION
 80/tcp open  http    Cisco SG200 switch http admin
-|_http-server-header: Web Server
 |_http-title: Switch
+|_http-server-header: Web Server
 MAC Address: EC:E1:A9:C7:E7:11 (Cisco Systems)
 Device type: switch
 Running: eCosCentric eCos 2.0, Cisco embedded, HP embedded, Netgear embedded
@@ -141,15 +139,15 @@ Service Info: Device: switch; CPE: cpe:/h:cisco:sg200
 
 TRACEROUTE
 HOP RTT     ADDRESS
-1   5.22 ms 172.21.172.20
+1   7.91 ms 172.21.172.20
 
 Nmap scan report for 172.21.172.21
-Host is up (0.0066s latency).
+Host is up (0.0077s latency).
 Not shown: 999 closed tcp ports (reset)
 PORT   STATE SERVICE VERSION
 80/tcp open  http    Cisco SG200 switch http admin
-|_http-server-header: Web Server
 |_http-title: Switch
+|_http-server-header: Web Server
 MAC Address: EC:E1:A9:C7:ED:E5 (Cisco Systems)
 Device type: switch
 Running: eCosCentric eCos 2.0, Cisco embedded, HP embedded, Netgear embedded
@@ -160,21 +158,20 @@ Service Info: Device: switch; CPE: cpe:/h:cisco:sg200
 
 TRACEROUTE
 HOP RTT     ADDRESS
-1   6.63 ms 172.21.172.21
+1   7.72 ms 172.21.172.21
 
 Nmap scan report for 172.21.172.30
-Host is up (0.00057s latency).
+Host is up (0.00070s latency).
 Not shown: 995 filtered tcp ports (no-response)
 PORT     STATE SERVICE         VERSION
 80/tcp   open  http            PRTG
-|_http-server-header: PRTG
 | fingerprint-strings: 
 |   FourOhFourRequest: 
 |     HTTP/1.1 302 Moved Temporarily
 |     Connection: close
 |     Content-Type: text/html; charset=ISO-8859-1
 |     Content-Length: 0
-|     Date: Thu, 09 Dec 2021 04:02:15 GMT
+|     Date: Sat, 11 Dec 2021 22:35:16 GMT
 |     Expires: 0
 |     Cache-Control: no-cache
 |     X-Content-Type-Options: nosniff
@@ -186,7 +183,7 @@ PORT     STATE SERVICE         VERSION
 |     Connection: close
 |     Content-Type: text/html; charset=ISO-8859-1
 |     Content-Length: 0
-|     Date: Thu, 09 Dec 2021 04:02:10 GMT
+|     Date: Sat, 11 Dec 2021 22:35:11 GMT
 |     Expires: 0
 |     Cache-Control: no-cache
 |     X-Content-Type-Options: nosniff
@@ -198,20 +195,16 @@ PORT     STATE SERVICE         VERSION
 |     Connection: close
 |     Content-Type: text/html; charset=ISO-8859-1
 |_    Content-Length: 0
+|_http-server-header: PRTG
 |_http-title: Did not follow redirect to https://172.21.172.30/?
 443/tcp  open  ssl/https       PRTG
-|_http-server-header: PRTG
-|_ssl-date: TLS randomness does not represent time
-| ssl-cert: Subject: commonName=PRTG Demo Certificate/organizationName=PRTG Demo Certificate
-| Not valid before: 2013-07-08T11:15:05
-|_Not valid after:  2023-07-06T11:15:05
 | fingerprint-strings: 
 |   FourOhFourRequest: 
 |     HTTP/1.1 302 Moved Temporarily
 |     Connection: close
 |     Content-Type: text/html; charset=ISO-8859-1
 |     Content-Length: 0
-|     Date: Thu, 09 Dec 2021 04:02:16 GMT
+|     Date: Sat, 11 Dec 2021 22:35:17 GMT
 |     Expires: 0
 |     Cache-Control: no-cache
 |     X-Content-Type-Options: nosniff
@@ -223,7 +216,7 @@ PORT     STATE SERVICE         VERSION
 |     Connection: close
 |     Content-Type: text/html; charset=ISO-8859-1
 |     Content-Length: 0
-|     Date: Thu, 09 Dec 2021 04:02:16 GMT
+|     Date: Sat, 11 Dec 2021 22:35:17 GMT
 |     Expires: 0
 |     Cache-Control: no-cache
 |     X-Content-Type-Options: nosniff
@@ -235,7 +228,7 @@ PORT     STATE SERVICE         VERSION
 |     Connection: close
 |     Content-Type: text/html; charset=ISO-8859-1
 |     Content-Length: 0
-|     Date: Thu, 09 Dec 2021 04:02:21 GMT
+|     Date: Sat, 11 Dec 2021 22:35:22 GMT
 |     Expires: 0
 |     Cache-Control: no-cache
 |     X-Content-Type-Options: nosniff
@@ -247,9 +240,14 @@ PORT     STATE SERVICE         VERSION
 |     Connection: close
 |     Content-Type: text/html; charset=ISO-8859-1
 |_    Content-Length: 0
+|_http-trane-info: Problem with XML parsing of /evox/about
 | http-title: Welcome | PRTG Network Monitor (DESKTOP-V1RP5KO)
 |_Requested resource was /index.htm
-|_http-trane-info: Problem with XML parsing of /evox/about
+| ssl-cert: Subject: commonName=PRTG Demo Certificate/organizationName=PRTG Demo Certificate
+| Not valid before: 2013-07-08T11:15:05
+|_Not valid after:  2023-07-06T11:15:05
+|_http-server-header: PRTG
+|_ssl-date: TLS randomness does not represent time
 6789/tcp open  ibm-db2-admin?
 8080/tcp open  http-proxy
 | fingerprint-strings: 
@@ -258,7 +256,7 @@ PORT     STATE SERVICE         VERSION
 |     Content-Type: text/html;charset=utf-8
 |     Content-Language: en
 |     Content-Length: 431
-|     Date: Thu, 09 Dec 2021 04:02:10 GMT
+|     Date: Sat, 11 Dec 2021 22:35:10 GMT
 |     Connection: close
 |     <!doctype html><html lang="en"><head><title>HTTP Status 404 
 |     Found</title><style type="text/css">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 404 
@@ -267,20 +265,20 @@ PORT     STATE SERVICE         VERSION
 |     HTTP/1.1 302 
 |     Location: http://localhost:8080/manage
 |     Content-Length: 0
-|     Date: Thu, 09 Dec 2021 04:02:10 GMT
+|     Date: Sat, 11 Dec 2021 22:35:10 GMT
 |     Connection: close
 |   RTSPRequest, Socks5: 
 |     HTTP/1.1 400 
 |     Content-Type: text/html;charset=utf-8
 |     Content-Language: en
 |     Content-Length: 435
-|     Date: Thu, 09 Dec 2021 04:02:10 GMT
+|     Date: Sat, 11 Dec 2021 22:35:10 GMT
 |     Connection: close
 |     <!doctype html><html lang="en"><head><title>HTTP Status 400 
 |     Request</title><style type="text/css">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 400 
 |_    Request</h1></body></html>
-|_http-title: Did not follow redirect to https://172.21.172.30:8443/manage
 |_http-open-proxy: Proxy might be redirecting requests
+|_http-title: Did not follow redirect to https://172.21.172.30:8443/manage
 8443/tcp open  ssl/nagios-nsca Nagios NSCA
 | ssl-cert: Subject: commonName=UniFi/organizationName=ubnt.com/stateOrProvinceName=CA/countryName=US
 | Subject Alternative Name: DNS:UniFi
@@ -290,117 +288,117 @@ PORT     STATE SERVICE         VERSION
 |_Requested resource was /manage/account/login?redirect=%2Fmanage
 3 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port80-TCP:V=7.92%I=7%D=12/8%Time=61B17FC2%P=x86_64-apple-darwin20.4.0%
-SF:r(GetRequest,125,"HTTP/1\.1\x20302\x20Moved\x20Temporarily\r\nConnectio
-SF:n:\x20close\r\nContent-Type:\x20text/html;\x20charset=ISO-8859-1\r\nCon
-SF:tent-Length:\x200\r\nDate:\x20Thu,\x2009\x20Dec\x202021\x2004:02:10\x20
-SF:GMT\r\nExpires:\x200\r\nCache-Control:\x20no-cache\r\nX-Content-Type-Op
-SF:tions:\x20nosniff\r\nX-XSS-Protection:\x201;\x20mode=block\r\nServer:\x
-SF:20PRTG\r\nLocation:\x20https:///\?\r\n\r\n")%r(HTTPOptions,125,"HTTP/1\
-SF:.1\x20302\x20Moved\x20Temporarily\r\nConnection:\x20close\r\nContent-Ty
-SF:pe:\x20text/html;\x20charset=ISO-8859-1\r\nContent-Length:\x200\r\nDate
-SF::\x20Thu,\x2009\x20Dec\x202021\x2004:02:10\x20GMT\r\nExpires:\x200\r\nC
-SF:ache-Control:\x20no-cache\r\nX-Content-Type-Options:\x20nosniff\r\nX-XS
-SF:S-Protection:\x201;\x20mode=block\r\nServer:\x20PRTG\r\nLocation:\x20ht
-SF:tps:///\?\r\n\r\n")%r(RTSPRequest,125,"HTTP/1\.1\x20302\x20Moved\x20Tem
-SF:porarily\r\nConnection:\x20close\r\nContent-Type:\x20text/html;\x20char
-SF:set=ISO-8859-1\r\nContent-Length:\x200\r\nDate:\x20Thu,\x2009\x20Dec\x2
-SF:02021\x2004:02:10\x20GMT\r\nExpires:\x200\r\nCache-Control:\x20no-cache
-SF:\r\nX-Content-Type-Options:\x20nosniff\r\nX-XSS-Protection:\x201;\x20mo
-SF:de=block\r\nServer:\x20PRTG\r\nLocation:\x20https:///\?\r\n\r\n")%r(Fou
-SF:rOhFourRequest,164,"HTTP/1\.1\x20302\x20Moved\x20Temporarily\r\nConnect
-SF:ion:\x20close\r\nContent-Type:\x20text/html;\x20charset=ISO-8859-1\r\nC
-SF:ontent-Length:\x200\r\nDate:\x20Thu,\x2009\x20Dec\x202021\x2004:02:15\x
-SF:20GMT\r\nExpires:\x200\r\nCache-Control:\x20no-cache\r\nX-Content-Type-
-SF:Options:\x20nosniff\r\nX-XSS-Protection:\x201;\x20mode=block\r\nServer:
-SF:\x20PRTG\r\nLocation:\x20/public/login\.htm\?loginurl=%2Fnice%20ports%2
-SF:C%2FTrinity\.txt\.bak&errorid=0\r\n\r\n")%r(SIPOptions,6F,"HTTP/1\.1\x2
-SF:0400\x20Bad\x20Request\r\nConnection:\x20close\r\nContent-Type:\x20text
-SF:/html;\x20charset=ISO-8859-1\r\nContent-Length:\x200\r\n\r\n");
+SF-Port80-TCP:V=7.92%I=7%D=12/11%Time=61B5279F%P=x86_64-apple-darwin20.4.0
+SF:%r(GetRequest,125,"HTTP/1\.1\x20302\x20Moved\x20Temporarily\r\nConnecti
+SF:on:\x20close\r\nContent-Type:\x20text/html;\x20charset=ISO-8859-1\r\nCo
+SF:ntent-Length:\x200\r\nDate:\x20Sat,\x2011\x20Dec\x202021\x2022:35:11\x2
+SF:0GMT\r\nExpires:\x200\r\nCache-Control:\x20no-cache\r\nX-Content-Type-O
+SF:ptions:\x20nosniff\r\nX-XSS-Protection:\x201;\x20mode=block\r\nServer:\
+SF:x20PRTG\r\nLocation:\x20https:///\?\r\n\r\n")%r(HTTPOptions,125,"HTTP/1
+SF:\.1\x20302\x20Moved\x20Temporarily\r\nConnection:\x20close\r\nContent-T
+SF:ype:\x20text/html;\x20charset=ISO-8859-1\r\nContent-Length:\x200\r\nDat
+SF:e:\x20Sat,\x2011\x20Dec\x202021\x2022:35:11\x20GMT\r\nExpires:\x200\r\n
+SF:Cache-Control:\x20no-cache\r\nX-Content-Type-Options:\x20nosniff\r\nX-X
+SF:SS-Protection:\x201;\x20mode=block\r\nServer:\x20PRTG\r\nLocation:\x20h
+SF:ttps:///\?\r\n\r\n")%r(RTSPRequest,125,"HTTP/1\.1\x20302\x20Moved\x20Te
+SF:mporarily\r\nConnection:\x20close\r\nContent-Type:\x20text/html;\x20cha
+SF:rset=ISO-8859-1\r\nContent-Length:\x200\r\nDate:\x20Sat,\x2011\x20Dec\x
+SF:202021\x2022:35:11\x20GMT\r\nExpires:\x200\r\nCache-Control:\x20no-cach
+SF:e\r\nX-Content-Type-Options:\x20nosniff\r\nX-XSS-Protection:\x201;\x20m
+SF:ode=block\r\nServer:\x20PRTG\r\nLocation:\x20https:///\?\r\n\r\n")%r(Fo
+SF:urOhFourRequest,164,"HTTP/1\.1\x20302\x20Moved\x20Temporarily\r\nConnec
+SF:tion:\x20close\r\nContent-Type:\x20text/html;\x20charset=ISO-8859-1\r\n
+SF:Content-Length:\x200\r\nDate:\x20Sat,\x2011\x20Dec\x202021\x2022:35:16\
+SF:x20GMT\r\nExpires:\x200\r\nCache-Control:\x20no-cache\r\nX-Content-Type
+SF:-Options:\x20nosniff\r\nX-XSS-Protection:\x201;\x20mode=block\r\nServer
+SF::\x20PRTG\r\nLocation:\x20/public/login\.htm\?loginurl=%2Fnice%20ports%
+SF:2C%2FTrinity\.txt\.bak&errorid=0\r\n\r\n")%r(SIPOptions,6F,"HTTP/1\.1\x
+SF:20400\x20Bad\x20Request\r\nConnection:\x20close\r\nContent-Type:\x20tex
+SF:t/html;\x20charset=ISO-8859-1\r\nContent-Length:\x200\r\n\r\n");
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port443-TCP:V=7.92%T=SSL%I=7%D=12/8%Time=61B17FC8%P=x86_64-apple-darwin
-SF:20.4.0%r(GetRequest,125,"HTTP/1\.1\x20302\x20Moved\x20Temporarily\r\nCo
-SF:nnection:\x20close\r\nContent-Type:\x20text/html;\x20charset=ISO-8859-1
-SF:\r\nContent-Length:\x200\r\nDate:\x20Thu,\x2009\x20Dec\x202021\x2004:02
-SF::16\x20GMT\r\nExpires:\x200\r\nCache-Control:\x20no-cache\r\nX-Content-
-SF:Type-Options:\x20nosniff\r\nX-XSS-Protection:\x201;\x20mode=block\r\nSe
-SF:rver:\x20PRTG\r\nLocation:\x20/index\.htm\r\n\r\n")%r(HTTPOptions,125,"
-SF:HTTP/1\.1\x20302\x20Moved\x20Temporarily\r\nConnection:\x20close\r\nCon
-SF:tent-Type:\x20text/html;\x20charset=ISO-8859-1\r\nContent-Length:\x200\
-SF:r\nDate:\x20Thu,\x2009\x20Dec\x202021\x2004:02:16\x20GMT\r\nExpires:\x2
-SF:00\r\nCache-Control:\x20no-cache\r\nX-Content-Type-Options:\x20nosniff\
-SF:r\nX-XSS-Protection:\x201;\x20mode=block\r\nServer:\x20PRTG\r\nLocation
-SF::\x20/index\.htm\r\n\r\n")%r(FourOhFourRequest,164,"HTTP/1\.1\x20302\x2
-SF:0Moved\x20Temporarily\r\nConnection:\x20close\r\nContent-Type:\x20text/
-SF:html;\x20charset=ISO-8859-1\r\nContent-Length:\x200\r\nDate:\x20Thu,\x2
-SF:009\x20Dec\x202021\x2004:02:16\x20GMT\r\nExpires:\x200\r\nCache-Control
-SF::\x20no-cache\r\nX-Content-Type-Options:\x20nosniff\r\nX-XSS-Protection
-SF::\x201;\x20mode=block\r\nServer:\x20PRTG\r\nLocation:\x20/public/login\
-SF:.htm\?loginurl=%2Fnice%20ports%2C%2FTrinity\.txt\.bak&errorid=0\r\n\r\n
-SF:")%r(RTSPRequest,125,"HTTP/1\.1\x20302\x20Moved\x20Temporarily\r\nConne
-SF:ction:\x20close\r\nContent-Type:\x20text/html;\x20charset=ISO-8859-1\r\
-SF:nContent-Length:\x200\r\nDate:\x20Thu,\x2009\x20Dec\x202021\x2004:02:21
-SF:\x20GMT\r\nExpires:\x200\r\nCache-Control:\x20no-cache\r\nX-Content-Typ
-SF:e-Options:\x20nosniff\r\nX-XSS-Protection:\x201;\x20mode=block\r\nServe
-SF:r:\x20PRTG\r\nLocation:\x20/index\.htm\r\n\r\n")%r(SIPOptions,6F,"HTTP/
-SF:1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\nContent-Type:\
-SF:x20text/html;\x20charset=ISO-8859-1\r\nContent-Length:\x200\r\n\r\n");
+SF-Port443-TCP:V=7.92%T=SSL%I=7%D=12/11%Time=61B527A5%P=x86_64-apple-darwi
+SF:n20.4.0%r(GetRequest,125,"HTTP/1\.1\x20302\x20Moved\x20Temporarily\r\nC
+SF:onnection:\x20close\r\nContent-Type:\x20text/html;\x20charset=ISO-8859-
+SF:1\r\nContent-Length:\x200\r\nDate:\x20Sat,\x2011\x20Dec\x202021\x2022:3
+SF:5:17\x20GMT\r\nExpires:\x200\r\nCache-Control:\x20no-cache\r\nX-Content
+SF:-Type-Options:\x20nosniff\r\nX-XSS-Protection:\x201;\x20mode=block\r\nS
+SF:erver:\x20PRTG\r\nLocation:\x20/index\.htm\r\n\r\n")%r(HTTPOptions,125,
+SF:"HTTP/1\.1\x20302\x20Moved\x20Temporarily\r\nConnection:\x20close\r\nCo
+SF:ntent-Type:\x20text/html;\x20charset=ISO-8859-1\r\nContent-Length:\x200
+SF:\r\nDate:\x20Sat,\x2011\x20Dec\x202021\x2022:35:17\x20GMT\r\nExpires:\x
+SF:200\r\nCache-Control:\x20no-cache\r\nX-Content-Type-Options:\x20nosniff
+SF:\r\nX-XSS-Protection:\x201;\x20mode=block\r\nServer:\x20PRTG\r\nLocatio
+SF:n:\x20/index\.htm\r\n\r\n")%r(FourOhFourRequest,164,"HTTP/1\.1\x20302\x
+SF:20Moved\x20Temporarily\r\nConnection:\x20close\r\nContent-Type:\x20text
+SF:/html;\x20charset=ISO-8859-1\r\nContent-Length:\x200\r\nDate:\x20Sat,\x
+SF:2011\x20Dec\x202021\x2022:35:17\x20GMT\r\nExpires:\x200\r\nCache-Contro
+SF:l:\x20no-cache\r\nX-Content-Type-Options:\x20nosniff\r\nX-XSS-Protectio
+SF:n:\x201;\x20mode=block\r\nServer:\x20PRTG\r\nLocation:\x20/public/login
+SF:\.htm\?loginurl=%2Fnice%20ports%2C%2FTrinity\.txt\.bak&errorid=0\r\n\r\
+SF:n")%r(RTSPRequest,125,"HTTP/1\.1\x20302\x20Moved\x20Temporarily\r\nConn
+SF:ection:\x20close\r\nContent-Type:\x20text/html;\x20charset=ISO-8859-1\r
+SF:\nContent-Length:\x200\r\nDate:\x20Sat,\x2011\x20Dec\x202021\x2022:35:2
+SF:2\x20GMT\r\nExpires:\x200\r\nCache-Control:\x20no-cache\r\nX-Content-Ty
+SF:pe-Options:\x20nosniff\r\nX-XSS-Protection:\x201;\x20mode=block\r\nServ
+SF:er:\x20PRTG\r\nLocation:\x20/index\.htm\r\n\r\n")%r(SIPOptions,6F,"HTTP
+SF:/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\nContent-Type:
+SF:\x20text/html;\x20charset=ISO-8859-1\r\nContent-Length:\x200\r\n\r\n");
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port8080-TCP:V=7.92%I=7%D=12/8%Time=61B17FC2%P=x86_64-apple-darwin20.4.
-SF:0%r(GetRequest,84,"HTTP/1\.1\x20302\x20\r\nLocation:\x20http://localhos
-SF:t:8080/manage\r\nContent-Length:\x200\r\nDate:\x20Thu,\x2009\x20Dec\x20
-SF:2021\x2004:02:10\x20GMT\r\nConnection:\x20close\r\n\r\n")%r(HTTPOptions
-SF:,84,"HTTP/1\.1\x20302\x20\r\nLocation:\x20http://localhost:8080/manage\
-SF:r\nContent-Length:\x200\r\nDate:\x20Thu,\x2009\x20Dec\x202021\x2004:02:
-SF:10\x20GMT\r\nConnection:\x20close\r\n\r\n")%r(RTSPRequest,24E,"HTTP/1\.
-SF:1\x20400\x20\r\nContent-Type:\x20text/html;charset=utf-8\r\nContent-Lan
-SF:guage:\x20en\r\nContent-Length:\x20435\r\nDate:\x20Thu,\x2009\x20Dec\x2
-SF:02021\x2004:02:10\x20GMT\r\nConnection:\x20close\r\n\r\n<!doctype\x20ht
-SF:ml><html\x20lang=\"en\"><head><title>HTTP\x20Status\x20400\x20\xe2\x80\
-SF:x93\x20Bad\x20Request</title><style\x20type=\"text/css\">body\x20{font-
-SF:family:Tahoma,Arial,sans-serif;}\x20h1,\x20h2,\x20h3,\x20b\x20{color:wh
-SF:ite;background-color:#525D76;}\x20h1\x20{font-size:22px;}\x20h2\x20{fon
-SF:t-size:16px;}\x20h3\x20{font-size:14px;}\x20p\x20{font-size:12px;}\x20a
-SF:\x20{color:black;}\x20\.line\x20{height:1px;background-color:#525D76;bo
-SF:rder:none;}</style></head><body><h1>HTTP\x20Status\x20400\x20\xe2\x80\x
-SF:93\x20Bad\x20Request</h1></body></html>")%r(FourOhFourRequest,24A,"HTTP
-SF:/1\.1\x20404\x20\r\nContent-Type:\x20text/html;charset=utf-8\r\nContent
-SF:-Language:\x20en\r\nContent-Length:\x20431\r\nDate:\x20Thu,\x2009\x20De
-SF:c\x202021\x2004:02:10\x20GMT\r\nConnection:\x20close\r\n\r\n<!doctype\x
-SF:20html><html\x20lang=\"en\"><head><title>HTTP\x20Status\x20404\x20\xe2\
-SF:x80\x93\x20Not\x20Found</title><style\x20type=\"text/css\">body\x20{fon
-SF:t-family:Tahoma,Arial,sans-serif;}\x20h1,\x20h2,\x20h3,\x20b\x20{color:
-SF:white;background-color:#525D76;}\x20h1\x20{font-size:22px;}\x20h2\x20{f
-SF:ont-size:16px;}\x20h3\x20{font-size:14px;}\x20p\x20{font-size:12px;}\x2
-SF:0a\x20{color:black;}\x20\.line\x20{height:1px;background-color:#525D76;
-SF:border:none;}</style></head><body><h1>HTTP\x20Status\x20404\x20\xe2\x80
-SF:\x93\x20Not\x20Found</h1></body></html>")%r(Socks5,24E,"HTTP/1\.1\x2040
-SF:0\x20\r\nContent-Type:\x20text/html;charset=utf-8\r\nContent-Language:\
-SF:x20en\r\nContent-Length:\x20435\r\nDate:\x20Thu,\x2009\x20Dec\x202021\x
-SF:2004:02:10\x20GMT\r\nConnection:\x20close\r\n\r\n<!doctype\x20html><htm
-SF:l\x20lang=\"en\"><head><title>HTTP\x20Status\x20400\x20\xe2\x80\x93\x20
-SF:Bad\x20Request</title><style\x20type=\"text/css\">body\x20{font-family:
-SF:Tahoma,Arial,sans-serif;}\x20h1,\x20h2,\x20h3,\x20b\x20{color:white;bac
-SF:kground-color:#525D76;}\x20h1\x20{font-size:22px;}\x20h2\x20{font-size:
-SF:16px;}\x20h3\x20{font-size:14px;}\x20p\x20{font-size:12px;}\x20a\x20{co
-SF:lor:black;}\x20\.line\x20{height:1px;background-color:#525D76;border:no
-SF:ne;}</style></head><body><h1>HTTP\x20Status\x20400\x20\xe2\x80\x93\x20B
-SF:ad\x20Request</h1></body></html>");
+SF-Port8080-TCP:V=7.92%I=7%D=12/11%Time=61B5279E%P=x86_64-apple-darwin20.4
+SF:.0%r(GetRequest,84,"HTTP/1\.1\x20302\x20\r\nLocation:\x20http://localho
+SF:st:8080/manage\r\nContent-Length:\x200\r\nDate:\x20Sat,\x2011\x20Dec\x2
+SF:02021\x2022:35:10\x20GMT\r\nConnection:\x20close\r\n\r\n")%r(HTTPOption
+SF:s,84,"HTTP/1\.1\x20302\x20\r\nLocation:\x20http://localhost:8080/manage
+SF:\r\nContent-Length:\x200\r\nDate:\x20Sat,\x2011\x20Dec\x202021\x2022:35
+SF::10\x20GMT\r\nConnection:\x20close\r\n\r\n")%r(RTSPRequest,24E,"HTTP/1\
+SF:.1\x20400\x20\r\nContent-Type:\x20text/html;charset=utf-8\r\nContent-La
+SF:nguage:\x20en\r\nContent-Length:\x20435\r\nDate:\x20Sat,\x2011\x20Dec\x
+SF:202021\x2022:35:10\x20GMT\r\nConnection:\x20close\r\n\r\n<!doctype\x20h
+SF:tml><html\x20lang=\"en\"><head><title>HTTP\x20Status\x20400\x20\xe2\x80
+SF:\x93\x20Bad\x20Request</title><style\x20type=\"text/css\">body\x20{font
+SF:-family:Tahoma,Arial,sans-serif;}\x20h1,\x20h2,\x20h3,\x20b\x20{color:w
+SF:hite;background-color:#525D76;}\x20h1\x20{font-size:22px;}\x20h2\x20{fo
+SF:nt-size:16px;}\x20h3\x20{font-size:14px;}\x20p\x20{font-size:12px;}\x20
+SF:a\x20{color:black;}\x20\.line\x20{height:1px;background-color:#525D76;b
+SF:order:none;}</style></head><body><h1>HTTP\x20Status\x20400\x20\xe2\x80\
+SF:x93\x20Bad\x20Request</h1></body></html>")%r(FourOhFourRequest,24A,"HTT
+SF:P/1\.1\x20404\x20\r\nContent-Type:\x20text/html;charset=utf-8\r\nConten
+SF:t-Language:\x20en\r\nContent-Length:\x20431\r\nDate:\x20Sat,\x2011\x20D
+SF:ec\x202021\x2022:35:10\x20GMT\r\nConnection:\x20close\r\n\r\n<!doctype\
+SF:x20html><html\x20lang=\"en\"><head><title>HTTP\x20Status\x20404\x20\xe2
+SF:\x80\x93\x20Not\x20Found</title><style\x20type=\"text/css\">body\x20{fo
+SF:nt-family:Tahoma,Arial,sans-serif;}\x20h1,\x20h2,\x20h3,\x20b\x20{color
+SF::white;background-color:#525D76;}\x20h1\x20{font-size:22px;}\x20h2\x20{
+SF:font-size:16px;}\x20h3\x20{font-size:14px;}\x20p\x20{font-size:12px;}\x
+SF:20a\x20{color:black;}\x20\.line\x20{height:1px;background-color:#525D76
+SF:;border:none;}</style></head><body><h1>HTTP\x20Status\x20404\x20\xe2\x8
+SF:0\x93\x20Not\x20Found</h1></body></html>")%r(Socks5,24E,"HTTP/1\.1\x204
+SF:00\x20\r\nContent-Type:\x20text/html;charset=utf-8\r\nContent-Language:
+SF:\x20en\r\nContent-Length:\x20435\r\nDate:\x20Sat,\x2011\x20Dec\x202021\
+SF:x2022:35:10\x20GMT\r\nConnection:\x20close\r\n\r\n<!doctype\x20html><ht
+SF:ml\x20lang=\"en\"><head><title>HTTP\x20Status\x20400\x20\xe2\x80\x93\x2
+SF:0Bad\x20Request</title><style\x20type=\"text/css\">body\x20{font-family
+SF::Tahoma,Arial,sans-serif;}\x20h1,\x20h2,\x20h3,\x20b\x20{color:white;ba
+SF:ckground-color:#525D76;}\x20h1\x20{font-size:22px;}\x20h2\x20{font-size
+SF::16px;}\x20h3\x20{font-size:14px;}\x20p\x20{font-size:12px;}\x20a\x20{c
+SF:olor:black;}\x20\.line\x20{height:1px;background-color:#525D76;border:n
+SF:one;}</style></head><body><h1>HTTP\x20Status\x20400\x20\xe2\x80\x93\x20
+SF:Bad\x20Request</h1></body></html>");
 MAC Address: 36:53:25:F7:23:01 (Unknown)
 Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
 Device type: general purpose|specialized
 Running (JUST GUESSING): Microsoft Windows XP (92%), AVtech embedded (87%), FreeBSD 6.X|10.X (86%)
 OS CPE: cpe:/o:microsoft:windows_xp::sp3 cpe:/o:freebsd:freebsd:6.2 cpe:/o:freebsd:freebsd:10.3
-Aggressive OS guesses: Microsoft Windows XP SP3 (92%), AVtech Room Alert 26W environmental monitor (87%), FreeBSD 6.2-RELEASE (86%), FreeBSD 10.3-STABLE (85%), Microsoft Windows XP SP2 (85%)
+Aggressive OS guesses: Microsoft Windows XP SP3 (92%), AVtech Room Alert 26W environmental monitor (87%), Microsoft Windows XP SP2 (87%), FreeBSD 6.2-RELEASE (86%), FreeBSD 10.3-STABLE (85%)
 No exact OS matches for host (test conditions non-ideal).
 Network Distance: 1 hop
 
 TRACEROUTE
 HOP RTT     ADDRESS
-1   0.57 ms 172.21.172.30
+1   0.70 ms 172.21.172.30
 
 Nmap scan report for 172.21.172.41
-Host is up (0.00057s latency).
+Host is up (0.00043s latency).
 All 1000 scanned ports on 172.21.172.41 are in ignored states.
 Not shown: 1000 closed tcp ports (reset)
 MAC Address: 2C:CC:44:29:7A:19 (Sony Interactive Entertainment)
@@ -412,15 +410,15 @@ Network Distance: 1 hop
 
 TRACEROUTE
 HOP RTT     ADDRESS
-1   0.57 ms 172.21.172.41
+1   0.43 ms 172.21.172.41
 
 Nmap scan report for 172.21.172.200
-Host is up (0.00054s latency).
+Host is up (0.00043s latency).
 Not shown: 995 closed tcp ports (reset)
 PORT      STATE SERVICE  VERSION
 80/tcp    open  http     Yamaha AV device httpd (model: RX-V681)
-|_http-server-header: Network_Module/1.0 (RX-V681)
 |_http-title: Web Control Center
+|_http-server-header: Network_Module/1.0 (RX-V681)
 5000/tcp  open  rtsp     Apple AirTunes rtspd 211.1 (Apple TV)
 |_rtsp-methods: ANNOUNCE, SETUP, RECORD, PAUSE, FLUSH, TEARDOWN, OPTIONS, GET_PARAMETER, SET_PARAMETER, POST, GET
 49153/tcp open  unknown
@@ -438,11 +436,11 @@ Service Info: OS: Mac OS X; Device: media device; CPE: cpe:/o:apple:mac_os_x
 
 TRACEROUTE
 HOP RTT     ADDRESS
-1   0.54 ms 172.21.172.200
+1   0.43 ms 172.21.172.200
 
 Nmap scan report for 172.21.172.210
-Host is up (0.00060s latency).
-Not shown: 982 filtered tcp ports (no-response), 17 filtered tcp ports (host-prohibited)
+Host is up (0.00059s latency).
+Not shown: 980 filtered tcp ports (no-response), 19 filtered tcp ports (host-prohibited)
 PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 7.4 (protocol 2.0)
 | ssh-hostkey: 
@@ -459,10 +457,10 @@ Network Distance: 1 hop
 
 TRACEROUTE
 HOP RTT     ADDRESS
-1   0.60 ms 172.21.172.210
+1   0.59 ms 172.21.172.210
 
 Nmap scan report for 172.21.172.220
-Host is up (0.00060s latency).
+Host is up (0.00079s latency).
 Not shown: 981 filtered tcp ports (no-response), 16 filtered tcp ports (admin-prohibited)
 PORT     STATE  SERVICE    VERSION
 22/tcp   open   ssh        OpenSSH 8.0 (protocol 2.0)
@@ -475,18 +473,16 @@ PORT     STATE  SERVICE    VERSION
 |_http-title: Test Page for the Nginx HTTP Server on Red Hat Enterprise Linux
 9090/tcp closed zeus-admin
 MAC Address: 56:9D:A8:FE:95:86 (Unknown)
-Device type: general purpose
-Running: Linux 5.X
-OS CPE: cpe:/o:linux:linux_kernel:5.1
-OS details: Linux 5.1
+Aggressive OS guesses: Linux 5.1 (98%), Linux 3.10 - 4.11 (97%), Linux 3.2 - 4.9 (96%), Linux 5.4 (95%), Linux 2.6.32 - 3.13 (95%), Linux 3.16 - 4.6 (94%), Linux 5.0 - 5.4 (94%), Linux 2.6.22 - 2.6.36 (93%), Linux 2.6.39 (93%), Linux 4.10 (92%)
+No exact OS matches for host (test conditions non-ideal).
 Network Distance: 1 hop
 
 TRACEROUTE
 HOP RTT     ADDRESS
-1   0.60 ms 172.21.172.220
+1   0.79 ms 172.21.172.220
 
 Nmap scan report for 172.21.172.251
-Host is up (0.00065s latency).
+Host is up (0.00077s latency).
 Not shown: 999 closed tcp ports (reset)
 PORT   STATE SERVICE VERSION
 22/tcp open  ssh     Dropbear sshd (protocol 2.0)
@@ -500,10 +496,10 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 TRACEROUTE
 HOP RTT     ADDRESS
-1   0.65 ms 172.21.172.251
+1   0.77 ms 172.21.172.251
 
 Nmap scan report for 172.21.172.43
-Host is up (0.00018s latency).
+Host is up (0.00013s latency).
 Not shown: 997 closed tcp ports (reset)
 PORT     STATE SERVICE VERSION
 22/tcp   open  ssh     OpenSSH 8.6 (protocol 2.0)
@@ -512,6 +508,7 @@ PORT     STATE SERVICE VERSION
 |   256 b5:a6:7e:47:07:1c:5e:77:17:f4:b0:12:c1:da:80:1d (ECDSA)
 |_  256 5f:2d:db:2e:3e:02:38:38:7c:3d:e1:75:b8:1d:a5:e2 (ED25519)
 5000/tcp open  rtsp
+|_rtsp-methods: ANNOUNCE, SETUP, RECORD, PAUSE, FLUSH, TEARDOWN, OPTIONS, GET_PARAMETER, SET_PARAMETER, POST, GET, PUT
 | fingerprint-strings: 
 |   FourOhFourRequest, GetRequest: 
 |     HTTP/1.1 404 Not Found
@@ -519,25 +516,26 @@ PORT     STATE SERVICE VERSION
 |     Server: AirTunes/595.13.1
 |   HTTPOptions: 
 |     HTTP/1.1 200 OK
-|     Date: Thu, 09 Dec 2021 04:07:21 GMT
+|     Date: Sat, 11 Dec 2021 22:47:35 GMT
 |     Content-Length: 0
 |     Public: ANNOUNCE, SETUP, RECORD, PAUSE, FLUSH, TEARDOWN, OPTIONS, GET_PARAMETER, SET_PARAMETER, POST, GET, PUT
 |     Server: AirTunes/595.13.1
 |   RTSPRequest: 
 |     RTSP/1.0 200 OK
-|     Date: Thu, 09 Dec 2021 04:07:16 GMT
+|     Date: Sat, 11 Dec 2021 22:47:30 GMT
 |     Content-Length: 0
 |     Public: ANNOUNCE, SETUP, RECORD, PAUSE, FLUSH, TEARDOWN, OPTIONS, GET_PARAMETER, SET_PARAMETER, POST, GET, PUT
 |     Server: AirTunes/595.13.1
 |   SIPOptions: 
 |     RTSP/1.0 200 OK
-|     Date: Thu, 09 Dec 2021 04:07:21 GMT
+|     Date: Sat, 11 Dec 2021 22:47:35 GMT
 |     Content-Length: 0
 |     Public: ANNOUNCE, SETUP, RECORD, PAUSE, FLUSH, TEARDOWN, OPTIONS, GET_PARAMETER, SET_PARAMETER, POST, GET, PUT
 |     Server: AirTunes/595.13.1
 |_    CSeq: 42 OPTIONS
-|_rtsp-methods: ANNOUNCE, SETUP, RECORD, PAUSE, FLUSH, TEARDOWN, OPTIONS, GET_PARAMETER, SET_PARAMETER, POST, GET, PUT
 7000/tcp open  rtsp
+|_rtsp-methods: ANNOUNCE, SETUP, RECORD, PAUSE, FLUSH, TEARDOWN, OPTIONS, GET_PARAMETER, SET_PARAMETER, POST, GET, PUT
+|_irc-info: Unable to open connection
 | fingerprint-strings: 
 |   FourOhFourRequest, GetRequest: 
 |     HTTP/1.1 404 Not Found
@@ -545,80 +543,78 @@ PORT     STATE SERVICE VERSION
 |     Server: AirTunes/595.13.1
 |   HTTPOptions: 
 |     HTTP/1.1 200 OK
-|     Date: Thu, 09 Dec 2021 04:07:36 GMT
+|     Date: Sat, 11 Dec 2021 22:47:50 GMT
 |     Content-Length: 0
 |     Public: ANNOUNCE, SETUP, RECORD, PAUSE, FLUSH, TEARDOWN, OPTIONS, GET_PARAMETER, SET_PARAMETER, POST, GET, PUT
 |     Server: AirTunes/595.13.1
 |   RTSPRequest: 
 |     RTSP/1.0 200 OK
-|     Date: Thu, 09 Dec 2021 04:07:36 GMT
+|     Date: Sat, 11 Dec 2021 22:47:50 GMT
 |     Content-Length: 0
 |     Public: ANNOUNCE, SETUP, RECORD, PAUSE, FLUSH, TEARDOWN, OPTIONS, GET_PARAMETER, SET_PARAMETER, POST, GET, PUT
 |     Server: AirTunes/595.13.1
 |   SIPOptions: 
 |     RTSP/1.0 200 OK
-|     Date: Thu, 09 Dec 2021 04:07:41 GMT
+|     Date: Sat, 11 Dec 2021 22:47:55 GMT
 |     Content-Length: 0
 |     Public: ANNOUNCE, SETUP, RECORD, PAUSE, FLUSH, TEARDOWN, OPTIONS, GET_PARAMETER, SET_PARAMETER, POST, GET, PUT
 |     Server: AirTunes/595.13.1
 |_    CSeq: 42 OPTIONS
-|_irc-info: Unable to open connection
-|_rtsp-methods: ANNOUNCE, SETUP, RECORD, PAUSE, FLUSH, TEARDOWN, OPTIONS, GET_PARAMETER, SET_PARAMETER, POST, GET, PUT
 2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port5000-TCP:V=7.92%I=7%D=12/8%Time=61B180F4%P=x86_64-apple-darwin20.4.
-SF:0%r(GetRequest,48,"HTTP/1\.1\x20404\x20Not\x20Found\r\nContent-Length:\
-SF:x200\r\nServer:\x20AirTunes/595\.13\.1\r\n\r\n")%r(RTSPRequest,D6,"RTSP
-SF:/1\.0\x20200\x20OK\r\nDate:\x20Thu,\x2009\x20Dec\x202021\x2004:07:16\x2
-SF:0GMT\r\nContent-Length:\x200\r\nPublic:\x20ANNOUNCE,\x20SETUP,\x20RECOR
-SF:D,\x20PAUSE,\x20FLUSH,\x20TEARDOWN,\x20OPTIONS,\x20GET_PARAMETER,\x20SE
-SF:T_PARAMETER,\x20POST,\x20GET,\x20PUT\r\nServer:\x20AirTunes/595\.13\.1\
-SF:r\n\r\n")%r(HTTPOptions,D6,"HTTP/1\.1\x20200\x20OK\r\nDate:\x20Thu,\x20
-SF:09\x20Dec\x202021\x2004:07:21\x20GMT\r\nContent-Length:\x200\r\nPublic:
-SF:\x20ANNOUNCE,\x20SETUP,\x20RECORD,\x20PAUSE,\x20FLUSH,\x20TEARDOWN,\x20
-SF:OPTIONS,\x20GET_PARAMETER,\x20SET_PARAMETER,\x20POST,\x20GET,\x20PUT\r\
-SF:nServer:\x20AirTunes/595\.13\.1\r\n\r\n")%r(FourOhFourRequest,48,"HTTP/
-SF:1\.1\x20404\x20Not\x20Found\r\nContent-Length:\x200\r\nServer:\x20AirTu
-SF:nes/595\.13\.1\r\n\r\n")%r(SIPOptions,E8,"RTSP/1\.0\x20200\x20OK\r\nDat
-SF:e:\x20Thu,\x2009\x20Dec\x202021\x2004:07:21\x20GMT\r\nContent-Length:\x
-SF:200\r\nPublic:\x20ANNOUNCE,\x20SETUP,\x20RECORD,\x20PAUSE,\x20FLUSH,\x2
-SF:0TEARDOWN,\x20OPTIONS,\x20GET_PARAMETER,\x20SET_PARAMETER,\x20POST,\x20
-SF:GET,\x20PUT\r\nServer:\x20AirTunes/595\.13\.1\r\nCSeq:\x2042\x20OPTIONS
-SF:\r\n\r\n");
+SF-Port5000-TCP:V=7.92%I=7%D=12/11%Time=61B52A82%P=x86_64-apple-darwin20.4
+SF:.0%r(GetRequest,48,"HTTP/1\.1\x20404\x20Not\x20Found\r\nContent-Length:
+SF:\x200\r\nServer:\x20AirTunes/595\.13\.1\r\n\r\n")%r(RTSPRequest,D6,"RTS
+SF:P/1\.0\x20200\x20OK\r\nDate:\x20Sat,\x2011\x20Dec\x202021\x2022:47:30\x
+SF:20GMT\r\nContent-Length:\x200\r\nPublic:\x20ANNOUNCE,\x20SETUP,\x20RECO
+SF:RD,\x20PAUSE,\x20FLUSH,\x20TEARDOWN,\x20OPTIONS,\x20GET_PARAMETER,\x20S
+SF:ET_PARAMETER,\x20POST,\x20GET,\x20PUT\r\nServer:\x20AirTunes/595\.13\.1
+SF:\r\n\r\n")%r(HTTPOptions,D6,"HTTP/1\.1\x20200\x20OK\r\nDate:\x20Sat,\x2
+SF:011\x20Dec\x202021\x2022:47:35\x20GMT\r\nContent-Length:\x200\r\nPublic
+SF::\x20ANNOUNCE,\x20SETUP,\x20RECORD,\x20PAUSE,\x20FLUSH,\x20TEARDOWN,\x2
+SF:0OPTIONS,\x20GET_PARAMETER,\x20SET_PARAMETER,\x20POST,\x20GET,\x20PUT\r
+SF:\nServer:\x20AirTunes/595\.13\.1\r\n\r\n")%r(FourOhFourRequest,48,"HTTP
+SF:/1\.1\x20404\x20Not\x20Found\r\nContent-Length:\x200\r\nServer:\x20AirT
+SF:unes/595\.13\.1\r\n\r\n")%r(SIPOptions,E8,"RTSP/1\.0\x20200\x20OK\r\nDa
+SF:te:\x20Sat,\x2011\x20Dec\x202021\x2022:47:35\x20GMT\r\nContent-Length:\
+SF:x200\r\nPublic:\x20ANNOUNCE,\x20SETUP,\x20RECORD,\x20PAUSE,\x20FLUSH,\x
+SF:20TEARDOWN,\x20OPTIONS,\x20GET_PARAMETER,\x20SET_PARAMETER,\x20POST,\x2
+SF:0GET,\x20PUT\r\nServer:\x20AirTunes/595\.13\.1\r\nCSeq:\x2042\x20OPTION
+SF:S\r\n\r\n");
 ==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
-SF-Port7000-TCP:V=7.92%I=7%D=12/8%Time=61B18108%P=x86_64-apple-darwin20.4.
-SF:0%r(GetRequest,48,"HTTP/1\.1\x20404\x20Not\x20Found\r\nContent-Length:\
-SF:x200\r\nServer:\x20AirTunes/595\.13\.1\r\n\r\n")%r(HTTPOptions,D6,"HTTP
-SF:/1\.1\x20200\x20OK\r\nDate:\x20Thu,\x2009\x20Dec\x202021\x2004:07:36\x2
-SF:0GMT\r\nContent-Length:\x200\r\nPublic:\x20ANNOUNCE,\x20SETUP,\x20RECOR
-SF:D,\x20PAUSE,\x20FLUSH,\x20TEARDOWN,\x20OPTIONS,\x20GET_PARAMETER,\x20SE
-SF:T_PARAMETER,\x20POST,\x20GET,\x20PUT\r\nServer:\x20AirTunes/595\.13\.1\
-SF:r\n\r\n")%r(RTSPRequest,D6,"RTSP/1\.0\x20200\x20OK\r\nDate:\x20Thu,\x20
-SF:09\x20Dec\x202021\x2004:07:36\x20GMT\r\nContent-Length:\x200\r\nPublic:
-SF:\x20ANNOUNCE,\x20SETUP,\x20RECORD,\x20PAUSE,\x20FLUSH,\x20TEARDOWN,\x20
-SF:OPTIONS,\x20GET_PARAMETER,\x20SET_PARAMETER,\x20POST,\x20GET,\x20PUT\r\
-SF:nServer:\x20AirTunes/595\.13\.1\r\n\r\n")%r(FourOhFourRequest,48,"HTTP/
-SF:1\.1\x20404\x20Not\x20Found\r\nContent-Length:\x200\r\nServer:\x20AirTu
-SF:nes/595\.13\.1\r\n\r\n")%r(SIPOptions,E8,"RTSP/1\.0\x20200\x20OK\r\nDat
-SF:e:\x20Thu,\x2009\x20Dec\x202021\x2004:07:41\x20GMT\r\nContent-Length:\x
-SF:200\r\nPublic:\x20ANNOUNCE,\x20SETUP,\x20RECORD,\x20PAUSE,\x20FLUSH,\x2
-SF:0TEARDOWN,\x20OPTIONS,\x20GET_PARAMETER,\x20SET_PARAMETER,\x20POST,\x20
-SF:GET,\x20PUT\r\nServer:\x20AirTunes/595\.13\.1\r\nCSeq:\x2042\x20OPTIONS
-SF:\r\n\r\n");
+SF-Port7000-TCP:V=7.92%I=7%D=12/11%Time=61B52A96%P=x86_64-apple-darwin20.4
+SF:.0%r(GetRequest,48,"HTTP/1\.1\x20404\x20Not\x20Found\r\nContent-Length:
+SF:\x200\r\nServer:\x20AirTunes/595\.13\.1\r\n\r\n")%r(HTTPOptions,D6,"HTT
+SF:P/1\.1\x20200\x20OK\r\nDate:\x20Sat,\x2011\x20Dec\x202021\x2022:47:50\x
+SF:20GMT\r\nContent-Length:\x200\r\nPublic:\x20ANNOUNCE,\x20SETUP,\x20RECO
+SF:RD,\x20PAUSE,\x20FLUSH,\x20TEARDOWN,\x20OPTIONS,\x20GET_PARAMETER,\x20S
+SF:ET_PARAMETER,\x20POST,\x20GET,\x20PUT\r\nServer:\x20AirTunes/595\.13\.1
+SF:\r\n\r\n")%r(RTSPRequest,D6,"RTSP/1\.0\x20200\x20OK\r\nDate:\x20Sat,\x2
+SF:011\x20Dec\x202021\x2022:47:50\x20GMT\r\nContent-Length:\x200\r\nPublic
+SF::\x20ANNOUNCE,\x20SETUP,\x20RECORD,\x20PAUSE,\x20FLUSH,\x20TEARDOWN,\x2
+SF:0OPTIONS,\x20GET_PARAMETER,\x20SET_PARAMETER,\x20POST,\x20GET,\x20PUT\r
+SF:\nServer:\x20AirTunes/595\.13\.1\r\n\r\n")%r(FourOhFourRequest,48,"HTTP
+SF:/1\.1\x20404\x20Not\x20Found\r\nContent-Length:\x200\r\nServer:\x20AirT
+SF:unes/595\.13\.1\r\n\r\n")%r(SIPOptions,E8,"RTSP/1\.0\x20200\x20OK\r\nDa
+SF:te:\x20Sat,\x2011\x20Dec\x202021\x2022:47:55\x20GMT\r\nContent-Length:\
+SF:x200\r\nPublic:\x20ANNOUNCE,\x20SETUP,\x20RECORD,\x20PAUSE,\x20FLUSH,\x
+SF:20TEARDOWN,\x20OPTIONS,\x20GET_PARAMETER,\x20SET_PARAMETER,\x20POST,\x2
+SF:0GET,\x20PUT\r\nServer:\x20AirTunes/595\.13\.1\r\nCSeq:\x2042\x20OPTION
+SF:S\r\n\r\n");
 No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
 TCP/IP fingerprint:
-OS:SCAN(V=7.92%E=4%D=12/8%OT=22%CT=1%CU=43285%PV=Y%DS=0%DC=L%G=Y%TM=61B1812
-OS:8%P=x86_64-apple-darwin20.4.0)SEQ(SP=FA%GCD=1%ISR=101%TI=Z%CI=RD%II=RI%T
-OS:S=22)OPS(O1=M3FD8NW6NNT11SLL%O2=M3FD8NW6NNT11SLL%O3=M3FD8NW6NNT11%O4=M3F
-OS:D8NW6NNT11SLL%O5=M3FD8NW6NNT11SLL%O6=M3FD8NNT11SLL)WIN(W1=FFFF%W2=FFFF%W
-OS:3=FFFF%W4=FFFF%W5=FFFF%W6=FFFF)ECN(R=Y%DF=Y%T=40%W=FFFF%O=M3FD8NW6SLL%CC
-OS:=N%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y%T
-OS:=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=N%T=40%W=0%S=Z%A=S+%F=AR%O=%RD=
-OS:0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=N%T=40%W=0%S=
-OS:Z%A=S%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=38%UN=0%RIPL=G%RID=G%RIPCK=Z%
-OS:RUCK=0%RUD=G)IE(R=Y%DFI=S%T=40%CD=S)
+OS:SCAN(V=7.92%E=4%D=12/11%OT=22%CT=1%CU=42623%PV=Y%DS=0%DC=L%G=Y%TM=61B52A
+OS:B6%P=x86_64-apple-darwin20.4.0)SEQ(SP=107%GCD=1%ISR=10B%TI=Z%CI=RD%II=RI
+OS:%TS=21)OPS(O1=M3FD8NW6NNT11SLL%O2=M3FD8NW6NNT11SLL%O3=M3FD8NW6NNT11%O4=M
+OS:3FD8NW6NNT11SLL%O5=M3FD8NW6NNT11SLL%O6=M3FD8NNT11SLL)WIN(W1=FFFF%W2=FFFF
+OS:%W3=FFFF%W4=FFFF%W5=FFFF%W6=FFFF)ECN(R=Y%DF=Y%T=40%W=FFFF%O=M3FD8NW6SLL%
+OS:CC=N%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(R=Y%DF=Y
+OS:%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=N%T=40%W=0%S=Z%A=S+%F=AR%O=%R
+OS:D=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=N%T=40%W=0%
+OS:S=Z%A=S%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=38%UN=0%RIPL=G%RID=G%RIPCK=
+OS:Z%RUCK=0%RUD=G)IE(R=Y%DFI=S%T=40%CD=S)
 
 Network Distance: 0 hops
 
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Wed Dec  8 20:08:08 2021 -- 256 IP addresses (13 hosts up) scanned in 383.10 seconds
+# Nmap done at Sat Dec 11 14:48:22 2021 -- 1024 IP addresses (13 hosts up) scanned in 1024.40 seconds

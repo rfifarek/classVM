@@ -1,28 +1,28 @@
-# Nmap 7.92 scan initiated Wed Dec  8 20:01:46 2021 as: nmap -n -oA inventory-scan -A 172.21.172.0/24
+# Nmap 7.92 scan initiated Sat Dec 11 14:31:18 2021 as: nmap -n -oA inventory-scan -A 172.21.172.0/22
 Host: 172.21.172.1 ()	Status: Up
-Host: 172.21.172.1 ()	Ports: 22/open/tcp//ssh//OpenSSH 7.9 (protocol 2.0)/, 53/open/tcp//domain//dnsmasq 2.85/, 80/open/tcp//http//nginx/, 443/open/tcp//ssl|http//nginx/	Ignored State: filtered (996)	Seq Index: 259	IP ID Seq: All zeros
+Host: 172.21.172.1 ()	Ports: 22/open/tcp//ssh//OpenSSH 7.9 (protocol 2.0)/, 53/open/tcp//domain//dnsmasq 2.85/, 80/open/tcp//http//nginx/, 443/open/tcp//ssl|http//nginx/	Ignored State: filtered (996)	OS: FreeBSD 11.2-RELEASE	Seq Index: 262	IP ID Seq: All zeros
 Host: 172.21.172.3 ()	Status: Up
-Host: 172.21.172.3 ()	Ports: 22/open/tcp//ssh//OpenSSH 7.4 (protocol 2.0)/, 53/open/tcp//domain//dnsmasq pi-hole-2.87test3/, 80/open/tcp//http//lighttpd 1.4.54/	Ignored State: filtered (997)	OS: Linux 3.10 - 4.11|Linux 3.2 - 4.9	Seq Index: 257	IP ID Seq: All zeros
+Host: 172.21.172.3 ()	Ports: 22/open/tcp//ssh//OpenSSH 7.4 (protocol 2.0)/, 53/open/tcp//domain//dnsmasq pi-hole-2.87test3/, 80/open/tcp//http//lighttpd 1.4.54/	Ignored State: filtered (997)	OS: Linux 3.10 - 4.11|Linux 3.2 - 4.9	Seq Index: 260	IP ID Seq: All zeros
 Host: 172.21.172.11 ()	Status: Up
-Host: 172.21.172.11 ()	Ports: 22/open/tcp//ssh//OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)/, 111/open/tcp//rpcbind//2-4 (RPC #100000)/, 3128/open/tcp//http//Proxmox Virtual Environment REST API 3.0/	Ignored State: closed (997)	OS: Linux 4.15 - 5.6	Seq Index: 260	IP ID Seq: All zeros
+Host: 172.21.172.11 ()	Ports: 22/open/tcp//ssh//OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)/, 111/open/tcp//rpcbind//2-4 (RPC #100000)/, 3128/open/tcp//http//Proxmox Virtual Environment REST API 3.0/	Ignored State: closed (997)	OS: Linux 4.15 - 5.6	Seq Index: 262	IP ID Seq: All zeros
 Host: 172.21.172.12 ()	Status: Up
-Host: 172.21.172.12 ()	Ports: 22/open/tcp//ssh//OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)/, 111/open/tcp//rpcbind//2-4 (RPC #100000)/, 3128/open/tcp//http//Proxmox Virtual Environment REST API 3.0/	Ignored State: closed (997)	OS: Linux 4.15 - 5.6	Seq Index: 260	IP ID Seq: All zeros
+Host: 172.21.172.12 ()	Ports: 22/open/tcp//ssh//OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)/, 111/open/tcp//rpcbind//2-4 (RPC #100000)/, 3128/open/tcp//http//Proxmox Virtual Environment REST API 3.0/	Ignored State: closed (997)	OS: Linux 4.15 - 5.6	Seq Index: 255	IP ID Seq: All zeros
 Host: 172.21.172.20 ()	Status: Up
-Host: 172.21.172.20 ()	Ports: 80/open/tcp//http//Cisco SG200 switch http admin/	Ignored State: closed (999)	OS: Cisco 200-series, HP ProCurve 1810G, or Netgear GS110TP switch (eCos 2.0)	Seq Index: 252	IP ID Seq: Incremental
+Host: 172.21.172.20 ()	Ports: 80/open/tcp//http//Cisco SG200 switch http admin/	Ignored State: closed (999)	OS: Cisco 200-series, HP ProCurve 1810G, or Netgear GS110TP switch (eCos 2.0)	Seq Index: 260	IP ID Seq: Incremental
 Host: 172.21.172.21 ()	Status: Up
 Host: 172.21.172.21 ()	Ports: 80/open/tcp//http//Cisco SG200 switch http admin/	Ignored State: closed (999)	OS: Cisco 200-series, HP ProCurve 1810G, or Netgear GS110TP switch (eCos 2.0)	Seq Index: 263	IP ID Seq: Incremental
 Host: 172.21.172.30 ()	Status: Up
-Host: 172.21.172.30 ()	Ports: 80/open/tcp//http//PRTG/, 443/open/tcp//ssl|https//PRTG/, 6789/open/tcp//ibm-db2-admin?///, 8080/open/tcp//http-proxy///, 8443/open/tcp//ssl|nagios-nsca//Nagios NSCA/	Ignored State: filtered (995)	Seq Index: 257	IP ID Seq: Incremental
+Host: 172.21.172.30 ()	Ports: 80/open/tcp//http//PRTG/, 443/open/tcp//ssl|https//PRTG/, 6789/open/tcp//ibm-db2-admin?///, 8080/open/tcp//http-proxy///, 8443/open/tcp//ssl|nagios-nsca//Nagios NSCA/	Ignored State: filtered (995)	Seq Index: 264	IP ID Seq: Incremental
 Host: 172.21.172.41 ()	Status: Up
 Host: 172.21.172.41 ()	Ports: 	Ignored State: closed (1000)
 Host: 172.21.172.200 ()	Status: Up
-Host: 172.21.172.200 ()	Ports: 80/open/tcp//http//Yamaha AV device httpd (model: RX-V681)/, 5000/open/tcp//rtsp//Apple AirTunes rtspd 211.1 (Apple TV)/, 49153/open/tcp//unknown///, 49154/open/tcp//http//Yamaha AV device httpd (model: RX-V681)/, 50000/open/tcp//ibm-db2?///	Ignored State: closed (995)	OS: Linux 2.6.32 - 3.10	Seq Index: 260	IP ID Seq: All zeros
+Host: 172.21.172.200 ()	Ports: 80/open/tcp//http//Yamaha AV device httpd (model: RX-V681)/, 5000/open/tcp//rtsp//Apple AirTunes rtspd 211.1 (Apple TV)/, 49153/open/tcp//unknown///, 49154/open/tcp//http//Yamaha AV device httpd (model: RX-V681)/, 50000/open/tcp//ibm-db2?///	Ignored State: closed (995)	OS: Linux 2.6.32 - 3.10	Seq Index: 264	IP ID Seq: All zeros
 Host: 172.21.172.210 ()	Status: Up
-Host: 172.21.172.210 ()	Ports: 22/open/tcp//ssh//OpenSSH 7.4 (protocol 2.0)/	Ignored State: filtered (999)	OS: Linux 3.10 - 4.11|Linux 3.2 - 4.9|Linux 5.1	Seq Index: 263	IP ID Seq: All zeros
+Host: 172.21.172.210 ()	Ports: 22/open/tcp//ssh//OpenSSH 7.4 (protocol 2.0)/	Ignored State: filtered (999)	OS: Linux 3.10 - 4.11|Linux 3.2 - 4.9|Linux 5.1	Seq Index: 262	IP ID Seq: All zeros
 Host: 172.21.172.220 ()	Status: Up
-Host: 172.21.172.220 ()	Ports: 22/open/tcp//ssh//OpenSSH 8.0 (protocol 2.0)/, 80/open/tcp//http//nginx 1.14.1/, 9090/closed/tcp//zeus-admin///	Ignored State: filtered (997)	OS: Linux 5.1	Seq Index: 262	IP ID Seq: All zeros
+Host: 172.21.172.220 ()	Ports: 22/open/tcp//ssh//OpenSSH 8.0 (protocol 2.0)/, 80/open/tcp//http//nginx 1.14.1/, 9090/closed/tcp//zeus-admin///	Ignored State: filtered (997)	Seq Index: 258	IP ID Seq: All zeros
 Host: 172.21.172.251 ()	Status: Up
-Host: 172.21.172.251 ()	Ports: 22/open/tcp//ssh//Dropbear sshd (protocol 2.0)/	Ignored State: closed (999)	OS: OpenWrt Chaos Calmer 15.05 (Linux 3.18) or Designated Driver (Linux 4.1 or 4.4)	Seq Index: 257	IP ID Seq: All zeros
+Host: 172.21.172.251 ()	Ports: 22/open/tcp//ssh//Dropbear sshd (protocol 2.0)/	Ignored State: closed (999)	OS: OpenWrt Chaos Calmer 15.05 (Linux 3.18) or Designated Driver (Linux 4.1 or 4.4)	Seq Index: 252	IP ID Seq: All zeros
 Host: 172.21.172.43 ()	Status: Up
-Host: 172.21.172.43 ()	Ports: 22/open/tcp//ssh//OpenSSH 8.6 (protocol 2.0)/, 5000/open/tcp//rtsp///, 7000/open/tcp//rtsp///	Ignored State: closed (997)	Seq Index: 258	IP ID Seq: All zeros
-# Nmap done at Wed Dec  8 20:08:08 2021 -- 256 IP addresses (13 hosts up) scanned in 383.10 seconds
+Host: 172.21.172.43 ()	Ports: 22/open/tcp//ssh//OpenSSH 8.6 (protocol 2.0)/, 5000/open/tcp//rtsp///, 7000/open/tcp//rtsp///	Ignored State: closed (997)	Seq Index: 260	IP ID Seq: All zeros
+# Nmap done at Sat Dec 11 14:48:22 2021 -- 1024 IP addresses (13 hosts up) scanned in 1024.40 seconds
