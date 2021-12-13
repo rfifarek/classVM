@@ -59,6 +59,7 @@
         - john
         - xml2
         - default-jre
+        - docker.io
       state: present
 #--- package operations (end) ---
 #--- permissions ---
