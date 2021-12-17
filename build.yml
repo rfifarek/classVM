@@ -138,6 +138,10 @@
       owner: root
       group: root
       mode: '0644'
+  
+  - name: Update NMAP scriptdb
+    command: "nmap --script-updatedb"
+  
   - name: Updated list
     get_url:
       url: https://raw.githubusercontent.com/rfifarek/classVM/main/password.lst
