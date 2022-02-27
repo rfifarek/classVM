@@ -193,6 +193,18 @@
   - name: Run the Wazuh unattended install script (reinstall)
     shell: /bin/bash /tmp/unattended-installation.sh -o > /tmp/wazuh-unattended-installation-output.log
     when: not wazuh.stat.exists
+    
+  - name: Disable Wazuh on startup (save RAM)
+    ansible.builtin.systemd:
+      name: "{{ item }}"
+      state: stopped
+      enabled: no
+    loop:
+      - wazuh-manager
+      - elasticsearch
+      - filebeat
+      - kibana
+      
 #--- Wazuh install (end) ---
 #--- add ansible snap module ---
   - name: Test if ansible-galaxy collection module installed
