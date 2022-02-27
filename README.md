@@ -4,9 +4,13 @@ Ansible build for classVM
 A pre-built VM is available here:
 https://drive.google.com/u/0/uc?id=1sP_BqID97J8_GNsygkqLDGKOVF5NU3TQ&export=download
 
+Size: ~6.5G plus ~14G when unpacked
+
 Credentials on the pre-built VM:
 - Username: infosec
-- Password: infosec (you should change this, immediately)
+- Password: infosec
+
+When first logging in, it will ask you to change it.  It will ask you to enter the o
 
 Note: if while importing the VM, you get an error that it "... did not pass OVF specification conformance ...", click on Retry and it should import and run fine.
 
@@ -17,7 +21,7 @@ To build the VM yourself, we recommend the following minimum specs:
 - Legacy BIOS
 - 2 vCPUs
 - 8 GB of RAM
-- 20 GB of disk (thin provisioned, actual use ~14 GB)
+- 20 GB of disk (thin provisioned, initial use ~14 GB)
 - DHCP / Share with my machine for network
 
 When installing, the default install options are fine, "Easy Install" included.
