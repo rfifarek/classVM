@@ -73,6 +73,7 @@
       - start-pentest.sh
       - stop-pentest.sh
       - testpermissions.sh
+      - start-wazuh-exercise.sh
       
   - name: Update permissions for exercise
     file:
