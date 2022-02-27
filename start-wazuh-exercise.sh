@@ -5,7 +5,11 @@ then
   exit
 fi
 
+echo "Starting ElasticSearch"
 /usr/bin/systemctl start elasticsearch
+echo "Starting Filebeat"
 /usr/bin/systemctl start filebeat
+echo "Starting Kibana"
 /usr/bin/systemctl start kibana
+echo "Starting Wazuh Manager"
 /usr/bin/systemctl start wazuh-manager
