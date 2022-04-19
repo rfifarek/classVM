@@ -208,10 +208,10 @@
       - kibana
       
 #--- Wazuh install (end) ---
-- name: Update jvm.options
-  get_url:
-    url: https://raw.githubusercontent.com/rfifarek/classVM/main/jvm.options
-    dest: /etc/elasticsearch/jvm.options
+  - name: Update jvm.options
+    get_url:
+      url: https://raw.githubusercontent.com/rfifarek/classVM/main/jvm.options
+      dest: /etc/elasticsearch/jvm.options
 
 #--- add ansible snap module ---
   - name: Test if ansible-galaxy collection module installed
