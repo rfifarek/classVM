@@ -9,8 +9,3 @@
         name:
           - code
         classic: yes
-
-    - name: "Install software via snaps (classic: no)"
-      community.general.snap:
-        name:
-          - discord
