@@ -180,14 +180,14 @@
       group: root
       mode: '0644'
       
-  - name: AS background, part 1
+  - name: AS background
     ansible.builtin.copy:
       src: AS-logo.png
       dest: /usr/share/xfce4/backdrops/xubuntu-wallpaper.png
       owner: root
       group: root
       mode: '0644'
-      backup: yes
+      
 #--- custom files (end) ---
 #--- Wazuh install ---
   - name: Test if Wazuh appears to be already installed
