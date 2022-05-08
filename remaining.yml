@@ -9,3 +9,7 @@
         name:
           - code
         classic: yes
+    - name: "Create first_run flag file
+      file:
+        path: 
+        state: touch
