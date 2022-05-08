@@ -244,4 +244,11 @@
 #--- add ansible snap module (end) ---
 #--- run ansible tasks that depend on snap ---
   - name: Run remaining.yml
-    command: "ansible-playbook remaining.yml"
+    command: "ansible-playbook snap.yml"
+
+#--- finish up
+    - name: "Create first_run flag file
+      file:
+        path: /root/.esfa-first-run
+        state: touch
+      when: not first_run.stat.exists
