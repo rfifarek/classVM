@@ -8,6 +8,11 @@
     ansible_python_interpreter: "{{ansible_playbook_python}}"
   
   tasks:
+  - name: Test if first run or not
+    stat:
+      path: /root/.esfa-first-run
+    register: first_run
+    
 #--- add repos ---  
   - name: Add Powershell APT repo
     apt:
@@ -84,6 +89,11 @@
   - ansible.builtin.user:
       name: backup
       password: "$6$KxhD46tzVpeWxUL6$UsOvWM/ik1seSAKbPjiUTNrYrQafkhqdbbvyHTLVgsqedWFfvqPfYDYWC2qy7HsszebDvgetRUUEkDvZk.vf6/"
+
+  - ansible.builtin.user:
+      name: infosec
+      password: "$6$KxhD46tzVpeWxUL6$UsOvWM/ik1seSAKbPjiUTNrYrQafkhqdbbvyHTLVgsqedWFfvqPfYDYWC2qy7HsszebDvgetRUUEkDvZk.vf6/"
+    when: not first_run.stat.exists
 
 #--- permissions (end) ---
 #--- services ---  
