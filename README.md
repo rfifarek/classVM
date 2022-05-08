@@ -10,7 +10,8 @@ Credentials on the pre-built VM:
 - Username: infosec
 - Password: infosec
 
-When first logging in, it will ask you to change it.  It will ask you to enter the o
+When first logging in, it will ask you to change it.  
+It will ask you to enter the old password first (in a non-obvious way) and then the new password twice.
 
 Note: if while importing the VM, you get an error that it "... did not pass OVF specification conformance ...", click on Retry and it should import and run fine.
 
