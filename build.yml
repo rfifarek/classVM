@@ -259,7 +259,7 @@
     command: "ansible-playbook snap.yml"
 
 #--- finish up
-  - name: "Create first_run flag file
+  - name: "Create first_run flag file"
     file:
       path: /root/.esfa-first-run
       state: touch
