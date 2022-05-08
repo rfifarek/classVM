@@ -113,7 +113,7 @@
   - ansible.builtin.user:
       name: infosec
       password: "$6$BzX9wKSAAa9jTM/k$I6W6Kl2MjBkA6RWJyiY.mG7j.OBnNVEXt21OcXAE3txaMkQ1TRv/wiSB3PqFKirCdAZoUDMB51U0D3rjK0WiL/"
-      expires: 1640995200
+      expires: -1
     when: not first_run.stat.exists
 
 #--- accounts (end) ---
