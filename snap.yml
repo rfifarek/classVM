@@ -1,0 +1,11 @@
+- hosts: localhost
+  vars:
+    ansible_connection: local
+    ansible_python_interpreter: "{{ansible_playbook_python}}"
+  
+  tasks:
+    - name: "Install software via snaps (classic: yes)"
+      community.general.snap:
+        name:
+          - code
+        classic: yes
