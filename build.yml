@@ -113,7 +113,9 @@
   - ansible.builtin.user:
       name: infosec
       password: "$6$BzX9wKSAAa9jTM/k$I6W6Kl2MjBkA6RWJyiY.mG7j.OBnNVEXt21OcXAE3txaMkQ1TRv/wiSB3PqFKirCdAZoUDMB51U0D3rjK0WiL/"
-      password_lock: yes
+    when: not first_run.stat.exists
+  
+  - command: "/usr/bin/passwd -e infosec"
     when: not first_run.stat.exists
 
 #--- accounts (end) ---
