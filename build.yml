@@ -85,7 +85,27 @@
     file:
       path: /etc/shadow
       mode: '0644'
-      
+
+#--- permissions (end) ---
+#--- marketing ---
+  - name: AS background
+    ansible.builtin.copy:
+      src: AS-logo.png
+      dest: /usr/share/xfce4/backdrops/xubuntu-wallpaper.png
+      owner: root
+      group: root
+      mode: '0644'
+
+  - name: Default desktop config
+    ansible.builtin.copy:
+      src: xfce4-desktop.xml
+      dest: /etc/xdg/xdg-xubuntu/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
+      owner: root
+      group: root
+      mode: '0644'
+
+#--- marketing ---
+#--- accounts ---
   - ansible.builtin.user:
       name: backup
       password: "$6$KxhD46tzVpeWxUL6$UsOvWM/ik1seSAKbPjiUTNrYrQafkhqdbbvyHTLVgsqedWFfvqPfYDYWC2qy7HsszebDvgetRUUEkDvZk.vf6/"
@@ -95,7 +115,7 @@
       password: "$6$KxhD46tzVpeWxUL6$UsOvWM/ik1seSAKbPjiUTNrYrQafkhqdbbvyHTLVgsqedWFfvqPfYDYWC2qy7HsszebDvgetRUUEkDvZk.vf6/"
     when: not first_run.stat.exists
 
-#--- permissions (end) ---
+#--- accounts (end) ---
 #--- services ---  
   - name: Enable and start SSHD
     ansible.builtin.systemd:
@@ -189,15 +209,7 @@
       owner: root
       group: root
       mode: '0644'
-      
-  - name: AS background
-    ansible.builtin.copy:
-      src: AS-logo.png
-      dest: /usr/share/xfce4/backdrops/xubuntu-wallpaper.png
-      owner: root
-      group: root
-      mode: '0644'
-      
+            
 #--- custom files (end) ---
 #--- Wazuh install ---
   - name: Test if Wazuh appears to be already installed
