@@ -12,6 +12,15 @@
     stat:
       path: /root/.esfa-first-run
     register: first_run
+
+  - name: Run whoami
+    command: whoami
+    changed_when: false
+    become: false
+    register: whoami
+
+  - set_fact:
+      login_user: "{{ whoami.stdout }}"
     
 #--- add repos ---  
   - name: Add Powershell APT repo
@@ -124,6 +133,11 @@
     args:
       chdir: /home/infosec
     when: not first_run.stat.exists
+    
+  - ansible.builtin.user:
+      name: vmbuild
+      shell: /sbin/nologin
+    when: first_run.stat.exists and login_user != "vmbuild"
 
 #--- accounts (end) ---
 #--- services ---  
