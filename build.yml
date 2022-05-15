@@ -119,6 +119,7 @@
       password: "$6$BzX9wKSAAa9jTM/k$I6W6Kl2MjBkA6RWJyiY.mG7j.OBnNVEXt21OcXAE3txaMkQ1TRv/wiSB3PqFKirCdAZoUDMB51U0D3rjK0WiL/"
       shell: /bin/bash
       system: yes
+      groups: sudo
     when: not first_run.stat.exists
   
   - command: "/usr/bin/passwd -e infosec"
