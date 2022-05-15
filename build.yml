@@ -119,6 +119,8 @@
     when: not first_run.stat.exists
     
   - command: "git clone https://github.com/rfifarek/classVM"
+    become: yes
+    become_user: infosec
     args:
       chdir: /home/infosec
     when: not first_run.stat.exists
