@@ -13,23 +13,9 @@
       path: /root/.esfa-first-run
     register: first_run
 
-  - name: Run whoami
-    command: whoami
-    changed_when: false
-    become: false
-    register: whoami
-
   - set_fact:
-      login_user: "{{ whoami.stdout }}"
+      login_user: "{{ ansible_env.SUDO_USER }}"
   
-  - debug:
-      var: login_user
-  
-  - debug:
-      var: ansible_env.SUDO_USER 
-  
-  - debug:
-      var: ansible_user_id
     
 #--- add repos ---  
   - name: Add Powershell APT repo
