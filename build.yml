@@ -24,6 +24,12 @@
   
   - debug:
       var: login_user
+  
+  - debug:
+      var: ansible_env.SUDO_USER 
+  
+  - debug:
+      var: ansible_user_id
     
 #--- add repos ---  
   - name: Add Powershell APT repo
