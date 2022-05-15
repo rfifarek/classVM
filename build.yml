@@ -242,14 +242,14 @@
   - name: Download the Wazuh unattended install script
     get_url:
       url: https://packages.wazuh.com/resources/4.2/open-distro/unattended-installation/unattended-installation.sh
-      dest: /tmp/unattended-installation.sh
+      dest: /root/unattended-installation.sh
     when: not wazuh.stat.exists 
     
   - name: Run the Wazuh unattended install script (reinstall)
-    shell: /bin/bash /tmp/unattended-installation.sh -o > /tmp/wazuh-unattended-installation-output.log
+    shell: /bin/bash /root/unattended-installation.sh -o > /root/wazuh-unattended-installation-output.log
     when: not wazuh.stat.exists
     
-  - name: Disable Wazuh on startup (save RAM)
+  - name: Disable Wazuh on startup (save memory)
     ansible.builtin.systemd:
       name: "{{ item }}"
       state: stopped
@@ -265,6 +265,9 @@
     get_url:
       url: https://raw.githubusercontent.com/rfifarek/classVM/main/jvm.options
       dest: /etc/elasticsearch/jvm.options
+  
+  - name: Prevent wazuh-manager from unplanned upgrade
+    command: apt-mark hold wazuh-manager
 
 #--- add ansible snap module ---
   - name: Test if ansible-galaxy collection module installed
