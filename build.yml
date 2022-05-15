@@ -21,6 +21,7 @@
 
   - set_fact:
       login_user: "{{ whoami.stdout }}"
+    debug: yes
     
 #--- add repos ---  
   - name: Add Powershell APT repo
