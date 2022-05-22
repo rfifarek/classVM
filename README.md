@@ -2,7 +2,7 @@
 Ansible build for classVM
 
 A pre-built VM is available here:
-https://drive.google.com/u/0/uc?id=1sP_BqID97J8_GNsygkqLDGKOVF5NU3TQ&export=download
+https://drive.google.com/uc?id=1-7r_1sS_EqUVFUuYY0BA5MPAFiyUC_6k&export=download
 
 Size: ~6.5G plus ~14G when unpacked (25G free on disk total)
 
