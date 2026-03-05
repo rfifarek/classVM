@@ -20,7 +20,7 @@
 #--- add repos ---  
   - name: Add Powershell APT repo
     apt:
-      deb: https://packages.microsoft.com/config/ubuntu/"{{ ansible_distribution_version}}"/packages-microsoft-prod.deb
+      deb: https://packages.microsoft.com/config/ubuntu/{{ ansible_distribution_version}}/packages-microsoft-prod.deb
   
   - name: Add KeePassXC repo
     ansible.builtin.apt_repository:
