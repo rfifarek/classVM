@@ -17,6 +17,16 @@
       login_user: "{{ ansible_env.SUDO_USER }}"
     when: ansible_user_gid != 0
   
+#--- add ansible snap module ---
+  - name: Test if ansible-galaxy collection module installed
+    ansible.builtin.stat:
+      path: /root/.ansible/collections/ansible_collections/community/general/plugins/modules/snap.py
+    register: snap
+  
+  - name: Install pre-req ansible-galaxy collection before running remaining.yml
+    command: "ansible-galaxy collection install community.general"
+    when: not snap.stat.exists
+#--- add ansible snap module (end) ---
     
 #--- add repos ---  
   - name: Add Powershell APT repo
@@ -272,16 +282,6 @@
   - name: Prevent wazuh-manager from unplanned upgrade
     command: apt-mark hold wazuh-manager
 
-#--- add ansible snap module ---
-  - name: Test if ansible-galaxy collection module installed
-    ansible.builtin.stat:
-      path: /root/.ansible/collections/ansible_collections/community/general/plugins/modules/snap.py
-    register: snap
-  
-  - name: Install pre-req ansible-galaxy collection before running remaining.yml
-    command: "ansible-galaxy collection install community.general"
-    when: not snap.stat.exists
-#--- add ansible snap module (end) ---
 #--- run ansible tasks that depend on snap ---
   - name: Run snap.yml
     command: "ansible-playbook snap.yml"
