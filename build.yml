@@ -70,6 +70,7 @@
         - xml2
         - default-jre
         - docker.io
+        - bzip2
       state: present
 #--- package operations (end) ---
 #--- permissions ---
