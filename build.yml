@@ -279,8 +279,7 @@
     file:
       path: /root/.esfa-first-run
       state: touch
-      
-  - command: "/usr/bin/passwd -e infosec"
     when: not first_run.stat.exists
-      
+    
+  - command: "/usr/bin/passwd -e infosec"
     when: not first_run.stat.exists
