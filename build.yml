@@ -217,7 +217,7 @@
       mode: '0644'
   - name: EICAR 4
     get_url:
-      url: https://secure.eicar.org/eicarcom2.zip
+      url: https://secure.eicar.org/eicar_com2.zip
       dest: "{{ playbook_dir }}/eicarcom2.zip"
       owner: root
       group: root
