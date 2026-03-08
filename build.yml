@@ -15,6 +15,7 @@
 
   - set_fact:
       login_user: "{{ ansible_env.SUDO_USER }}"
+    when: ansible_user_gid != 0
   
     
 #--- add repos ---  
