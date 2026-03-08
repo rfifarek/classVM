@@ -126,7 +126,7 @@
   - ansible.builtin.user:
       name: vmbuild
       shell: /sbin/nologin
-    when: first_run.stat.exists and login_user != "vmbuild"
+    when: first_run.stat.exists and ansible_user_id != "vmbuild"
 
 #--- accounts (end) ---
 #--- services ---  
