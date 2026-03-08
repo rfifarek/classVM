@@ -122,10 +122,7 @@
       system: yes
       groups: sudo
     when: not first_run.stat.exists
-  
-  - command: "/usr/bin/passwd -e infosec"
-    when: not first_run.stat.exists
-        
+          
   - ansible.builtin.user:
       name: vmbuild
       shell: /sbin/nologin
@@ -282,4 +279,8 @@
     file:
       path: /root/.esfa-first-run
       state: touch
+      
+  - command: "/usr/bin/passwd -e infosec"
+    when: not first_run.stat.exists
+      
     when: not first_run.stat.exists
