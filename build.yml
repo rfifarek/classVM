@@ -103,6 +103,15 @@
       mode: '0644'
     when: ansible_distribution == "Xubuntu"
 
+  - name: AS background
+    ansible.builtin.copy:
+      src: AS-logo.png
+      dest: /home/infosec/Pictures/as-logo.png
+      owner: infosec
+      group: infosec
+      mode: '0644'
+    when: ansible_distribution == "Ubuntu"
+
   - name: Default desktop config
     ansible.builtin.copy:
       src: xfce4-desktop.xml
