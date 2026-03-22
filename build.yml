@@ -32,7 +32,7 @@
   - name: Add Powershell APT repo
     apt:
       deb: https://packages.microsoft.com/config/ubuntu/{{ ansible_distribution_version }}/packages-microsoft-prod.deb
-    when: ansible_architecture == x86_64  
+    when: ansible_architecture == 'x86_64'  
   
   - name: Add KeePassXC repo
     ansible.builtin.apt_repository:
@@ -88,13 +88,13 @@
       name:
         - powershell
       state: present  
-    when: ansible_architecture == x86_64 
+    when: ansible_architecture == 'x86_64' 
 
   - name: Install powershell via snap
     community.general.snap:
       name: powershell
       state: present  
-    when: ansible_architecture == aarch64
+    when: ansible_architecture == 'aarch64'
       
 #--- package operations (end) ---
 #--- permissions ---
