@@ -32,6 +32,7 @@
   - name: Add Powershell APT repo
     apt:
       deb: https://packages.microsoft.com/config/ubuntu/{{ ansible_distribution_version }}/packages-microsoft-prod.deb
+    when: ansible_architecture == x86_64  
   
   - name: Add KeePassXC repo
     ansible.builtin.apt_repository:
@@ -68,7 +69,6 @@
         - vim
         - wget
         - tilix
-        - powershell
         - apt-transport-https
         - software-properties-common
         - openssh-server
@@ -82,6 +82,20 @@
         - docker.io
         - bzip2
       state: present
+
+  - name: Install packages (apt)
+    ansible.builtin.package:
+      name:
+        - powershell
+      state: present  
+    when: ansible_architecture == x86_64 
+
+  - name: Install powershell via snap
+    community.general.snap:
+      name: powershell
+      state: present  
+    when: ansible_architecture == aarch64
+      
 #--- package operations (end) ---
 #--- permissions ---
   - name: Make script executable
