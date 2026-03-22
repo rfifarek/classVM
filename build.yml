@@ -93,6 +93,7 @@
   - name: Install powershell via snap
     community.general.snap:
       name: powershell
+      classic: true
       state: present  
     when: ansible_architecture == 'aarch64'
       
