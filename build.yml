@@ -274,7 +274,7 @@
     when: not wazuh.stat.exists 
     
   - name: Run the Wazuh unattended install script (reinstall)
-    shell: /bin/bash /root/wazuh-unattended-installation.sh -ao > /root/wazuh-unattended-installation-output.log
+    shell: /bin/bash /root/wazuh-unattended-installation.sh -a -o > /root/wazuh-unattended-installation-output.log
     when: not wazuh.stat.exists
     
   - name: Disable Wazuh on startup (save memory)
