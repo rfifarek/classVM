@@ -305,19 +305,11 @@
       state: present
     when: ansible_architecture == 'x86_64'
 
-  - name: Install code snap (x86_64)
-    community.general.snap:
-      name: 
-        - code
-      classic: true
-      state: present
-    when: ansible_architecture == 'x86_64'
-
-- name: Install .deb directly from a URL
-  ansible.builtin.apt:
-    # Example URL, replace with your actual package URL
-    deb: https://aka.ms/linux-arm64-deb
-  when: ansible_architecture == 'aarch64'  
+  - name: Install .deb directly from a URL
+    ansible.builtin.apt:
+      # Example URL, replace with your actual package URL
+      deb: https://aka.ms/linux-arm64-deb
+    when: ansible_architecture == 'aarch64'  
       
 #--- finish up
   - name: "Create first_run flag file"
