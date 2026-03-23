@@ -90,13 +90,6 @@
       state: present  
     when: ansible_architecture == 'x86_64' 
 
-  - name: Install powershell via snap
-    community.general.snap:
-      name: powershell
-      classic: true
-      state: present  
-    when: ansible_architecture == 'aarch64'
-      
 #--- package operations (end) ---
 #--- permissions ---
   - name: Make script executable
@@ -304,9 +297,15 @@
     command: apt-mark hold wazuh-manager
 
 #--- run ansible tasks that depend on snap ---
-  - name: Run snap.yml
-    command: "ansible-playbook snap.yml"
-
+  - name: Install snaps
+    community.general.snap:
+      name: 
+        - powershell
+        - code
+      classic: true
+      state: present  
+    when: ansible_architecture == 'aarch64'
+      
 #--- finish up
   - name: "Create first_run flag file"
     file:
