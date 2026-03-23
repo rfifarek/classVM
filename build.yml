@@ -83,13 +83,6 @@
         - bzip2
       state: present
 
-  - name: Install packages (apt)
-    ansible.builtin.package:
-      name:
-        - powershell
-      state: present  
-    when: ansible_architecture == 'x86_64' 
-
 #--- package operations (end) ---
 #--- permissions ---
   - name: Make script executable
@@ -303,8 +296,7 @@
         - powershell
         - code
       classic: true
-      state: present  
-    when: ansible_architecture == 'aarch64'
+      state: present
       
 #--- finish up
   - name: "Create first_run flag file"
