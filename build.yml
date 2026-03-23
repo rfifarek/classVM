@@ -293,23 +293,12 @@
     ansible.builtin.package_facts:
       manager: auto # Automatically detects the package manager (apt, rpm, etc.)
       
-  - name: Display the installed version of a specific package
-    ansible.builtin.debug:
-      msg: "The installed version of wazuh-manager is {{ ansible_facts.packages['wazuh-manager'][0].version }}"
-    when: "'wazuh-manager' in ansible_facts.packages" # Ensure the package is installed before attempting to access its facts
-
-  - name: Use the version information in a conditional (e.g., for zabbix-agent)
-    ansible.builtin.debug:
-      msg: "wazuh-manager version {{ ansible_facts.packages['wazuh-manager'][0].version }} is acceptable"
-    when:
-      - "'wazuh-manager' in ansible_facts.packages"
-      - "ansible_facts.packages['wazuh-manager'][0].version is version('4.14', '>=')" # Use the built-in version test
-        
   - name: Update jvm.options
     get_url:
       url: https://raw.githubusercontent.com/rfifarek/classVM/main/jvm.options
       dest: /etc/elasticsearch/jvm.options
-    when:   
+    when:
+      - "ansible_facts.packages['wazuh-manager'][0].version is version('4.14', '<')" # Use the built-in version test
   
   - name: Prevent wazuh-manager from unplanned upgrade
     command: apt-mark hold wazuh-manager
