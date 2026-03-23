@@ -284,9 +284,9 @@
       enabled: no
     loop:
       - wazuh-manager
-      - elasticsearch
+      - wazuh-dashboard
+      - wazuh-indexer
       - filebeat
-      - kibana
       
 #--- Wazuh install (end) ---
   - name: Update jvm.options
