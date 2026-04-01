@@ -81,6 +81,7 @@
         - default-jre
         - docker.io
         - bzip2
+        - open-vm-tools-desktop
       state: present
 
 #--- package operations (end) ---
