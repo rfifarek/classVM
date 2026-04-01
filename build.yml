@@ -78,7 +78,7 @@
         - libpcre3-dev
         - john
         - xml2
-        - default-jre
+        - openjdk-8-jre
         - docker.io
         - bzip2
         - open-vm-tools-desktop
